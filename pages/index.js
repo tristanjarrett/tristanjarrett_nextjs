@@ -17,23 +17,39 @@ const Home = () => {
     formState: { errors },
   } = useForm();
 
+  // const onSubmit = (data) => {
+  //   emailjs
+  //     .sendForm(
+  //       'service_ucwym58',
+  //       'template_mjft6ee',
+  //       '#contact-form',
+  //       'tMFc16INtfK2kwXXh'
+  //     )
+  //     .then(
+  //       () => {
+  //         setIsSuccess(true); // set the state variable to true
+  //         reset();
+  //       },
+  //       (error) => {
+  //         alert(`An error occurred while sending your message: ${error.text}`);
+  //       }
+  //     );
+  // };
+
   const onSubmit = (data) => {
-    emailjs
-      .sendForm(
-        'service_ucwym58',
-        'template_mjft6ee',
-        '#contact-form',
-        'tMFc16INtfK2kwXXh'
-      )
-      .then(
+    grecaptcha.execute('6Ld0knQlAAAAACK-5SFSB5-VrsfIeQTI4KXd8O6T', {action: 'submit'}).then(function(token) {
+      emailjs.sendForm('service_ucwym58', 'template_mjft6ee', '#contact-form', 'tMFc16INtfK2kwXXh', {
+        'g-recaptcha-response': token
+      }).then(
         () => {
-          setIsSuccess(true); // set the state variable to true
+          setIsSuccess(true);
           reset();
         },
         (error) => {
           alert(`An error occurred while sending your message: ${error.text}`);
         }
       );
+    });
   };
 
   return (
@@ -174,6 +190,7 @@ const Home = () => {
                       <p className="text-red-500 mt-2">This field is required</p>
                     )}
                   </div>
+                  <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response" />
                   <button
                     type="submit"
                     className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 text-white font-bold px-4 py-4 rounded-md hover:from-blue-400 hover:via-purple-400 hover:to-indigo-400 w-full"

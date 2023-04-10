@@ -13,6 +13,7 @@ export default function App({ Component, pageProps }) {
           gtag('config', 'UA-137493871-1');
         `}
       </Script>
+      <Script src="https://www.google.com/recaptcha/api.js?render=6Ld0knQlAAAAACK-5SFSB5-VrsfIeQTI4KXd8O6T"></Script>
       <Component {...pageProps} />
     </>
   )
