@@ -88,8 +88,9 @@ const Home = () => {
                 </li>
                 <li>
                   <a href="https://github.com/tristanjarrett" className="hover:text-gray-500" target="_blank" rel="noopener noreferrer">
-                    <span class="sr-only">GitHub</span></a>
+                    <span class="sr-only">GitHub</span>
                     <FontAwesomeIcon icon={faGithub} size="2x" />
+                  </a>
                 </li>
                 <li>
                   <a href="https://instagram.com/tristangjarrett" className="hover:text-pink-500" target="_blank" rel="noopener noreferrer">
