@@ -3,9 +3,11 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
 import emailjs from 'emailjs-com';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faCoffee, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
   const [isSuccess, setIsSuccess] = useState(false); 
@@ -66,17 +68,12 @@ const Home = () => {
         <meta name="twitter:title" content="Tristan Jarrett | Software Engineer" />
         <meta name="twitter:description" content="Building bespoke apps and websites enhanced with AI for the best security and performance" />
         <meta name="twitter:image" content="screenshot.png" />
+        <meta name="author" content="Tristan Jarrett" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
       <div className="bg-gray-100 min-h-screen flex flex-col font-sans dark:bg-gray-900">
-        <nav className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 py-4 px-6 w-full flex justify-between items-center shadow-lg">
-          <div className="flex items-center">
-            <span className="text-xl font-semibold text-white">Tristan Jarrett</span>
-          </div>
-          <a href="#contact" className="text-xl font-medium text-white hover:underline">
-            Get in touch!
-          </a>
-        </nav>
+        <Header />
 
         <div className="container px-4 mx-auto flex-grow">
           <div className="py-16 lg:py-24 flex flex-col lg:flex-row justify-center items-start lg:space-x-20">
@@ -219,11 +216,7 @@ const Home = () => {
 
         </div>
 
-        <footer className="pb-6 text-center">
-          <p className='text-lg text-gray-800 dark:text-white'>
-            &copy; {new Date().getFullYear()} Tristan Jarrett, made with <FontAwesomeIcon icon={faCoffee} size="1x" />
-          </p>
-        </footer>
+        <Footer />
       </div>
     </>
   );
