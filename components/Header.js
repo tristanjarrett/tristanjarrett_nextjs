@@ -1,13 +1,15 @@
 import React from 'react';
 import Image from 'next/image'
-import Icon from '@/public/icon.svg'
+import Icon from '@/public/icon.webp'
 
 const Header = () => {
   return (
-    <nav className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 py-4 px-6 w-full flex justify-between items-center shadow-lg">
-      <div className="flex items-center">
-        <Image src={Icon} width={40} height={40} className="mr-4" />
-        <span className="text-xl font-semibold text-white"><a href="/">Tristan Jarrett</a></span>
+    <nav className="bg-blue-950 py-4 px-4 w-full flex justify-between items-center shadow-lg">
+      <div>
+        <a href="/" className="flex items-center">
+          <Image src={Icon} width={50} height={50} className="mr-4" alt="Icon" />
+          <span className="text-xl font-semibold text-white">Tristan Jarrett</span>
+        </a>
       </div>
       <a href="/#contact" className="text-xl font-medium text-white hover:underline">
         Get in touch!

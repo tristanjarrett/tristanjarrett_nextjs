@@ -8,10 +8,8 @@ const Footer = () => {
         <p className='text-lg text-gray-800 dark:text-white'>
         &copy; {new Date().getFullYear()} Tristan Jarrett, made with <FontAwesomeIcon icon={faCoffee} size="1x" />
         </p>
-        <p className='text-gray-500'>
-        <a href="/privacy" className="hover:underline">Privacy Policy</a>
-        {' | '}
-        <a href="https://ko-fi.com/tristanjarrett" className="hover:underline">Ko-Fi</a>
+        <p className='text-gray-800 dark:text-gray-200'>
+          <a href="/privacy" className="hover:underline">Privacy Policy</a>
         </p>
     </footer>
   );

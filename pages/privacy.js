@@ -20,38 +20,36 @@ const Privacy = () => {
           <div className="py-16 lg:py-24 flex flex-col lg:flex-row justify-center items-start lg:space-x-20">
             <div className="lg:w-3/5">
               <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
-
               <p className="mb-6">
                 This privacy policy discloses the privacy practices for Tristan Jarrett and our website (tristanjarrett.com) and mobile applications (Futhark). This privacy policy applies solely to information collected by this website and our mobile applications.
               </p>
-
-              <h2 className="text-2xl font-bold mb-4">Information Collection, Use, and Sharing</h2>
-
+              <h2 className="text-2xl font-bold mb-4">Information Collection and Use</h2>
               <p className="mb-6">
-                We are the sole owners of the information collected on this site and in our mobile applications. We only have access to/collect information that you voluntarily give us via email, through the use of our contact form, or other direct contact from you. We will not sell or rent this information to anyone.
+                We only collect information that you voluntarily provide to us through our website contact form or through our mobile applications. This information may include your name, email address, and any other information you choose to provide us in your message or in your use of the mobile applications. We will use this information solely for the purpose of responding to your inquiries or providing you with the requested services through our mobile applications.
               </p>
-
               <p className="mb-6">
-                We will use your information to respond to you, regarding the reason you contacted us. We will not share your information with any third party outside of our organization, other than as necessary to fulfill your request, e.g. to ship an order.
+                We use Google Analytics to track website usage and improve our services. Google Analytics collects information such as your device type, IP address, and other usage data. Google Analytics may also use cookies and other tracking technologies to collect this information. You can learn more about how Google Analytics collects and processes data by visiting the Google Analytics Terms of Service.
               </p>
-
+              <h2 className="text-2xl font-bold mb-4">Third-Party Services</h2>
+              <p className="mb-6">
+                We use Google ReCaptcha to prevent spam and abuse on our website contact form. Google ReCaptcha collects information about your device and IP address in order to provide this service. You can learn more about how Google ReCaptcha collects and processes data by visiting the Google Privacy Policy.
+              </p>
+              <p className="mb-6">
+                Our mobile applications use Apple CloudKit to store user favorites. Apple CloudKit collects information about your device and usage data in order to provide this service. You can learn more about how Apple CloudKit collects and processes data by visiting the Apple Privacy Policy.
+              </p>
               <h2 className="text-2xl font-bold mb-4">Security</h2>
-
               <p className="mb-6">
-                We take precautions to protect your information. When you submit sensitive information via the website or mobile applications, your information is protected both online and offline.
+                We take appropriate security measures to protect your personal information from unauthorized access, alteration, or disclosure. However, no method of transmission over the internet or electronic storage is completely secure, so we cannot guarantee absolute security.
               </p>
-
               <h2 className="text-2xl font-bold mb-4">Updates</h2>
-
               <p className="mb-6">
-                Our Privacy Policy may change from time to time and all updates will be posted on this page.
+                Our Privacy Policy may change from time to time and all updates will be posted on this page. Your continued use of our website or mobile applications after any changes to the Privacy Policy constitutes your acceptance of the new terms.
               </p>
-
               <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
-
               <p className="mb-6">
                 If you have any questions or concerns regarding our Privacy Policy, please contact us at (hello@tristanjarrett.com).
               </p>
+              <p>Last updated on 26 April 2023</p>
             </div>
           </div>
         </div>

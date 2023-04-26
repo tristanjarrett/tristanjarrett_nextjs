@@ -7,7 +7,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { faExternalLinkAlt, faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
   const [isSuccess, setIsSuccess] = useState(false); 
@@ -79,8 +79,8 @@ const Home = () => {
           <div className="py-16 lg:py-24 flex flex-col lg:flex-row justify-center items-start lg:space-x-20">
             <div className="w-full lg:w-2/3">
               <h1 className="text-5xl font-bold mb-10 lg:pr-20">
-                Hey! I'm <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">Tristan</span>, a Software Engineer with over
-                <span className="bg-gradient-to-br from-yellow-500 via-orange-500 to-pink-500 bg-clip-text text-transparent"> Eight</span> years of experience.
+                Hey! I'm <span className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500">Tristan</span>, a Software Engineer with over
+                eight years of experience.
               </h1>
               <p className="text-xl mb-4">
                 I have worked on a wide variety of
@@ -100,15 +100,21 @@ const Home = () => {
                   </a>
                 </li>
                 <li>
+                  <a href="https://instagram.com/tristangjarrett" className="hover:text-pink-500" target="_blank" rel="noopener noreferrer">
+                    <span class="sr-only">Instagram</span>
+                    <FontAwesomeIcon icon={faInstagram} size="2x" />
+                  </a>
+                </li>
+                <li>
                   <a href="https://github.com/tristanjarrett" className="hover:text-gray-500" target="_blank" rel="noopener noreferrer">
                     <span class="sr-only">GitHub</span>
                     <FontAwesomeIcon icon={faGithub} size="2x" />
                   </a>
                 </li>
                 <li>
-                  <a href="https://instagram.com/tristangjarrett" className="hover:text-pink-500" target="_blank" rel="noopener noreferrer">
-                    <span class="sr-only">Instagram</span>
-                    <FontAwesomeIcon icon={faInstagram} size="2x" />
+                  <a href="https://ko-fi.com/tristanjarrett" className="hover:text-amber-800" target="_blank" rel="noopener noreferrer">
+                    <span class="sr-only">Ko-fi</span>
+                    <FontAwesomeIcon icon={faCoffee} size="2x" />
                   </a>
                 </li>
               </ul>
@@ -137,7 +143,7 @@ const Home = () => {
               </div>
 
               <div id="contact" className="mt-12">
-                <h2 className="text-2xl font-bold mb-6">Lets work together</h2>
+                <h2 className="text-2xl font-bold mb-6">Get in touch!</h2>
                 <form
                   onSubmit={handleSubmit(onSubmit)}
                   id="contact-form"
@@ -151,7 +157,7 @@ const Home = () => {
                       {...register('name', { required: true })}
                       id="name"
                       type="text"
-                      className="border-2 border-gray-300 px-4 py-2 w-full rounded-md focus:border-purple-500 focus:outline-none transition-colors dark:bg-gray-700 dark:border-gray-500"
+                      className="border-2 border-gray-300 px-4 py-2 w-full rounded-md focus:border-purple-500 dark:focus:border-orange-500 focus:outline-none transition-colors dark:bg-gray-700 dark:border-gray-500"
                     />
                     {errors.name && (
                       <p className="text-red-500 mt-2">This field is required</p>
@@ -165,7 +171,7 @@ const Home = () => {
                       {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
                       id="email"
                       type="email"
-                      className="border-2 border-gray-300 px-4 py-2 w-full rounded-md focus:border-purple-500 focus:outline-none transition-colors dark:bg-gray-700 dark:border-gray-500"
+                      className="border-2 border-gray-300 px-4 py-2 w-full rounded-md focus:border-purple-500 dark:focus:border-orange-500 focus:outline-none transition-colors dark:bg-gray-700 dark:border-gray-500"
                     />
                     {errors.email && (
                       <p className="text-red-500 mt-2">
@@ -181,7 +187,7 @@ const Home = () => {
                       {...register('message', { required: true })}
                       id="message"
                       rows="5"
-                      className="border-2 border-gray-300 px-4 py-2 w-full rounded-md focus:border-purple-500 focus:outline-none transition-colors dark:bg-gray-700 dark:border-gray-500"
+                      className="border-2 border-gray-300 px-4 py-2 w-full rounded-md focus:border-purple-500 dark:focus:border-orange-500 focus:outline-none transition-colors dark:bg-gray-700 dark:border-gray-500"
                     ></textarea>
                     {errors.message && (
                       <p className="text-red-500 mt-2">This field is required</p>
@@ -190,7 +196,7 @@ const Home = () => {
                   <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response" />
                   <button
                     type="submit"
-                    className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 text-white font-bold px-4 py-4 rounded-md hover:from-blue-400 hover:via-purple-400 hover:to-indigo-400 w-full"
+                    className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 text-white font-bold px-8 py-4 rounded-md hover:from-blue-600 hover:via-purple-600 hover:to-indigo-600 dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500 dark:hover:from-yellow-400 dark:hover:via-orange-400 dark:hover:to-pink-400"
                   >
                     Send message
                   </button>
@@ -202,9 +208,9 @@ const Home = () => {
 
             </div>
             <div className="w-full lg:w-1/3 mb-10 lg:mb-0 relative sticky top-10 hidden lg:block">
-              <div className="bg-gradient-to-br from-yellow-500 via-orange-500 to-pink-500 w-full h-full rounded-3xl shadow-lg absolute -left-4 -bottom-4 z-0"></div>
+              <div className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 w-full h-full rounded-3xl shadow-lg absolute -left-4 -bottom-4 z-0 dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500"></div>
               <Image
-                src="/tristan.jpeg"
+                src="/tristan.jpg"
                 alt="Tristan"
                 width={500}
                 height={500}
