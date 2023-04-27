@@ -112,7 +112,7 @@ const Home = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="https://ko-fi.com/tristanjarrett" className="hover:text-amber-800" target="_blank" rel="noopener noreferrer">
+                  <a href="https://ko-fi.com/tristanjarrett" className="hover:text-orange-500" target="_blank" rel="noopener noreferrer">
                     <span class="sr-only">Ko-fi</span>
                     <FontAwesomeIcon icon={faCoffee} size="2x" />
                   </a>
@@ -123,15 +123,16 @@ const Home = () => {
                 <h2 className="text-2xl font-bold mb-6">What am I up to?</h2>
                 <ul className="flex space-x-4 mb-8">
                   {[
-                    { href: 'https://dysrupt.co.uk', src: '/dysrupt.jpeg', alt: 'Dysrupt' },
-                    { href: 'https://solution17.co.uk', src: '/solution17.jpeg', alt: 'Solution17' },
-                    { href: 'https://fyiro.io', src: '/fyiro.png', alt: 'Fyiro' },
-                    { href: 'https://nftbulq.com', src: '/bulq.png', alt: 'BulQ' },
+                    { href: 'https://dysrupt.co.uk', src: 'dysrupt.png', alt: 'Dysrupt' },
+                    { href: 'https://apps.apple.com/app/futhark/id6443659537', src: 'futhark.png', alt: 'Futhark' },
+                    { href: 'https://solution17.co.uk', src: 'solution17.jpeg', alt: 'Solution17' },
+                    { href: 'https://fyiro.io', src: 'fyiro.png', alt: 'Fyiro' },
+                    { href: 'https://nftbulq.com', src: 'bulq.png', alt: 'BulQ' },
                   ].map(({ href, src, alt }) => (
                     <li key={alt} className="group relative">
                       <a href={href} target="_blank" rel="noopener noreferrer" className="block">
                         <div className="relative">
-                          <Image src={src} alt={alt} width={100} height={100} className="rounded-lg" />
+                          <Image src={`/brands/${src}`} alt={alt} width={100} height={100} className="rounded-lg border-2 border-gray-200 dark:border-gray-800" />
                           <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center">
                             <FontAwesomeIcon icon={faExternalLinkAlt} size="lg" className="text-white" />
                           </div>
@@ -147,7 +148,7 @@ const Home = () => {
                 <form
                   onSubmit={handleSubmit(onSubmit)}
                   id="contact-form"
-                  className="w-full mx-auto p-8 bg-white rounded-xl shadow-lg dark:bg-gray-800"
+                  className="w-full mx-auto p-4 md:p-8 bg-white rounded-xl shadow-lg dark:bg-gray-800"
                 >
                   <div className="mb-6 w-full">
                     <label htmlFor="name" className="block font-semibold mb-2">
