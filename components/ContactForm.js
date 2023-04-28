@@ -98,10 +98,10 @@ const ContactForm = () => {
         className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 text-white font-bold px-8 py-4 rounded-md hover:from-blue-600 hover:via-purple-600 hover:to-indigo-600 dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500 dark:hover:from-yellow-400 dark:hover:via-orange-400 dark:hover:to-pink-400 disabled:opacity-50"
       >
         {!isLoading ? (
-          <>
+          <div className="flex items-center">
             <span className="mr-2">Send message</span>
             <FontAwesomeIcon icon={faPaperPlane} />
-          </>
+          </div>
         ) : (
           <span>Sending...</span>
         )}
