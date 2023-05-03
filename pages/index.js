@@ -76,8 +76,8 @@ const Home = () => {
                 <h2 className="text-2xl font-bold mb-6">Try my apps (iOS)</h2>
                 <ul className="flex space-x-4 mb-8">
                   {[
-                    { href: 'https://apps.apple.com/app/futhark/id6443659537', src: 'futhark.png', alt: 'Futhark' },
-                    { href: 'https://apps.apple.com/app/futhark/id6448712135', src: 'percentx.png', alt: 'PercentX' },
+                    { href: 'https://apps.apple.com/app/id6443659537', src: 'futhark.png', alt: 'Futhark' },
+                    { href: 'https://apps.apple.com/app/id6448712135', src: 'percentx.png', alt: 'PercentX' },
                   ].map(({ href, src, alt }) => (
                     <li key={alt} className="group relative">
                       <a href={href} target="_blank" rel="noopener noreferrer" className="block">
