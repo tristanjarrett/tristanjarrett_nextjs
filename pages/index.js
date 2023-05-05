@@ -8,6 +8,20 @@ import { faLinkedin, faGithub, faInstagram } from '@fortawesome/free-brands-svg-
 import { faExternalLinkAlt, faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
+  const techStack = [
+    { name: "React" },
+    { name: "Swift" },
+    { name: "JavaScript" },
+    { name: "Node.js" },
+    { name: "Flutter" },
+    { name: "Machine Learning" },
+    { name: "Python" },
+    { name: "Dart" },
+    { name: "Next.js" },
+    { name: "SwiftUI" },
+    { name: "Computer Vision" },
+  ];
+
   return (
     <>
       <Head>
@@ -71,6 +85,17 @@ const Home = () => {
                   </a>
                 </li>
               </ul>
+
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold mb-6">My Tech Stack</h2>
+                <div className="flex flex-wrap gap-2">
+                  {techStack.map((tech) => (
+                    <span key={tech.name} className="px-2 py-1 rounded-lg bg-gray-200 dark:bg-gray-800">
+                      {tech.name}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
               <div className="mt-12">
                 <h2 className="text-2xl font-bold mb-6">Try my apps (iOS)</h2>
