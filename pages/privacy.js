@@ -37,6 +37,9 @@ const Privacy = () => {
               <p className="mb-6">
                 Our mobile applications use Apple CloudKit to store user favorites. Apple CloudKit collects information about your device and usage data in order to provide this service. You can learn more about how Apple CloudKit collects and processes data by visiting the Apple Privacy Policy.
               </p>
+              <p className="mb-6">
+                Our mobile applications use Google AdMob to display ads. Google AdMob may collect information such as your device type, IP address, and other usage data to provide personalized ads. You can learn more about how Google AdMob collects and processes data by visiting the Google Privacy Policy.
+              </p>
               <h2 className="text-2xl font-bold mb-4">Security</h2>
               <p className="mb-6">
                 We take appropriate security measures to protect your personal information from unauthorized access, alteration, or disclosure. However, no method of transmission over the internet or electronic storage is completely secure, so we cannot guarantee absolute security.
@@ -49,7 +52,7 @@ const Privacy = () => {
               <p className="mb-6">
                 If you have any questions or concerns regarding our Privacy Policy, please contact us at (hello@tristanjarrett.com).
               </p>
-              <p>Last updated on 26 April 2023</p>
+              <p>Last updated on 5 May 2023</p>
             </div>
           </div>
         </div>
