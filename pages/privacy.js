@@ -35,7 +35,7 @@ const Privacy = () => {
                 We use Google ReCaptcha to prevent spam and abuse on our website contact form. Google ReCaptcha collects information about your device and IP address in order to provide this service. You can learn more about how Google ReCaptcha collects and processes data by visiting the Google Privacy Policy.
               </p>
               <p className="mb-6">
-                Our mobile applications use Apple CloudKit to store user favorites. Apple CloudKit collects information about your device and usage data in order to provide this service. You can learn more about how Apple CloudKit collects and processes data by visiting the Apple Privacy Policy.
+                Our mobile applications use Apple CloudKit to store user favourites. Apple CloudKit collects information about your device and usage data in order to provide this service. You can learn more about how Apple CloudKit collects and processes data by visiting the Apple Privacy Policy.
               </p>
               <p className="mb-6">
                 Our mobile applications use Google AdMob to display ads. Google AdMob may collect information such as your device type, IP address, and other usage data to provide personalized ads. You can learn more about how Google AdMob collects and processes data by visiting the Google Privacy Policy.
