@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faGithub, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faExternalLinkAlt, faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
@@ -49,6 +49,7 @@ const Home = () => {
               <h1 className="text-5xl font-bold mb-10 lg:pr-20">
                 Hey! I'm <span className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500">Tristan</span>, a Software Engineer with nearly ten years of experience.
               </h1>
+
               <p className="text-xl mb-4">
                 I have worked on a wide variety of
                 projects, including website development, mobile app development, SaaS
@@ -57,10 +58,15 @@ const Home = () => {
                 delivering high-quality work and helping my clients achieve their
                 objectives.
               </p>
+
+              <p className="text-xl mb-4">
+                In my free time, I enjoy exploring new cafes, hiking, driving cars, and building apps.
+              </p>
+
               <ul className="flex space-x-4 mt-8">
                 <li>
                   <a
-                    href="https://www.linkedin.com/in/tristanjarrett/" className="hover:text-blue-500" target="_blank" rel="noopener noreferrer"
+                    href="https://www.linkedin.com/in/tristanjarrett" className="hover:text-blue-500" target="_blank" rel="noopener noreferrer"
                   >
                     <span class="sr-only">LinkedIn</span>
                     <FontAwesomeIcon icon={faLinkedin} size="2x" />
@@ -76,6 +82,12 @@ const Home = () => {
                   <a href="https://github.com/tristanjarrett" className="hover:text-gray-500" target="_blank" rel="noopener noreferrer">
                     <span class="sr-only">GitHub</span>
                     <FontAwesomeIcon icon={faGithub} size="2x" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/@tristangjarrett" className="hover:text-red-500" target="_blank" rel="noopener noreferrer">
+                    <span class="sr-only">YouTube</span>
+                    <FontAwesomeIcon icon={faYoutube} size="2x" />
                   </a>
                 </li>
                 <li>
@@ -101,14 +113,14 @@ const Home = () => {
                 <h2 className="text-2xl font-bold mb-6">Try my apps (iOS)</h2>
                 <ul className="flex space-x-4 mb-8">
                   {[
-                    { href: 'https://apps.apple.com/app/id6443659537', src: 'futhark.png', alt: 'Futhark' },
                     { href: 'https://apps.apple.com/app/id6448712135', src: 'percentx.png', alt: 'PercentX' },
+                    { href: 'https://apps.apple.com/app/id6443659537', src: 'futhark.png', alt: 'Futhark' },
                   ].map(({ href, src, alt }) => (
                     <li key={alt} className="group relative">
                       <a href={href} target="_blank" rel="noopener noreferrer" className="block">
                         <div className="relative">
-                          <Image src={`/brands/${src}`} alt={alt} width={100} height={100} className="rounded-lg border-2 border-gray-200 dark:border-gray-800" />
-                          <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center">
+                          <Image src={`/brands/${src}`} alt={alt} width={100} height={100} className="rounded-xl border-2 border-gray-200 dark:border-gray-800" />
+                          <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl flex items-center justify-center">
                             <FontAwesomeIcon icon={faExternalLinkAlt} size="lg" className="text-white" />
                           </div>
                         </div>
@@ -130,8 +142,8 @@ const Home = () => {
                     <li key={alt} className="group relative">
                       <a href={href} target="_blank" rel="noopener noreferrer" className="block">
                         <div className="relative">
-                          <Image src={`/brands/${src}`} alt={alt} width={100} height={100} className="rounded-lg border-2 border-gray-200 dark:border-gray-800" />
-                          <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center">
+                          <Image src={`/brands/${src}`} alt={alt} width={100} height={100} className="rounded-xl border-2 border-gray-200 dark:border-gray-800" />
+                          <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl flex items-center justify-center">
                             <FontAwesomeIcon icon={faExternalLinkAlt} size="lg" className="text-white" />
                           </div>
                         </div>
