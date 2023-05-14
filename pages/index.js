@@ -1,8 +1,10 @@
 import Image from 'next/image';
 import Head from 'next/head';
+import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
+import appData from '@/data/apps.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faExternalLinkAlt, faCoffee } from '@fortawesome/free-solid-svg-icons';
@@ -68,38 +70,38 @@ const Home = () => {
                   <a
                     href="https://www.linkedin.com/in/tristanjarrett" className="hover:text-blue-500" target="_blank" rel="noopener noreferrer"
                   >
-                    <span class="sr-only">LinkedIn</span>
+                    <span className="sr-only">LinkedIn</span>
                     <FontAwesomeIcon icon={faLinkedin} size="2x" />
                   </a>
                 </li>
                 <li>
                   <a href="https://instagram.com/tristangjarrett" className="hover:text-pink-500" target="_blank" rel="noopener noreferrer">
-                    <span class="sr-only">Instagram</span>
+                    <span className="sr-only">Instagram</span>
                     <FontAwesomeIcon icon={faInstagram} size="2x" />
                   </a>
                 </li>
                 <li>
                   <a href="https://github.com/tristanjarrett" className="hover:text-gray-500" target="_blank" rel="noopener noreferrer">
-                    <span class="sr-only">GitHub</span>
+                    <span className="sr-only">GitHub</span>
                     <FontAwesomeIcon icon={faGithub} size="2x" />
                   </a>
                 </li>
                 <li>
                   <a href="https://www.youtube.com/@tristangjarrett" className="hover:text-red-500" target="_blank" rel="noopener noreferrer">
-                    <span class="sr-only">YouTube</span>
+                    <span className="sr-only">YouTube</span>
                     <FontAwesomeIcon icon={faYoutube} size="2x" />
                   </a>
                 </li>
                 <li>
                   <a href="https://ko-fi.com/tristanjarrett" className="hover:text-orange-500" target="_blank" rel="noopener noreferrer">
-                    <span class="sr-only">Ko-fi</span>
+                    <span className="sr-only">Ko-fi</span>
                     <FontAwesomeIcon icon={faCoffee} size="2x" />
                   </a>
                 </li>
               </ul>
 
               <div className="mt-12">
-                <h2 className="text-2xl font-bold mb-6">My Tech Stack</h2>
+                <h2 className="text-2xl font-bold mb-6">My #TechStack</h2>
                 <div className="flex flex-wrap gap-2">
                   {techStack.map((tech) => (
                     <span key={tech.name} className="px-2 py-1 rounded-lg bg-gray-200 dark:bg-gray-800">
@@ -110,28 +112,25 @@ const Home = () => {
               </div>
 
               <div className="mt-12">
-                <h2 className="text-2xl font-bold mb-6">Try my apps (iOS)</h2>
+                <h2 className="text-2xl font-bold mb-6">I've published some apps</h2>
                 <ul className="flex space-x-4 mb-8">
-                  {[
-                    { href: 'https://apps.apple.com/app/id6448712135', src: 'percentx.png', alt: 'PercentX' },
-                    { href: 'https://apps.apple.com/app/id6443659537', src: 'futhark.png', alt: 'Futhark' },
-                  ].map(({ href, src, alt }) => (
-                    <li key={alt} className="group relative">
-                      <a href={href} target="_blank" rel="noopener noreferrer" className="block">
+                  {appData.map(app => (
+                    <li key={app.id} className="group relative">
+                      <Link href={`/apps/${app.id}`} className="block">
                         <div className="relative">
-                          <Image src={`/brands/${src}`} alt={alt} width={100} height={100} className="rounded-xl border-2 border-gray-200 dark:border-gray-800" />
+                          <Image src={`/brands/${app.icon}`} alt={app.name} width={100} height={100} className="rounded-xl border-2 border-gray-200 dark:border-gray-800" />
                           <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl flex items-center justify-center">
                             <FontAwesomeIcon icon={faExternalLinkAlt} size="lg" className="text-white" />
                           </div>
                         </div>
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
               </div>
 
               <div className="mt-12">
-                <h2 className="text-2xl font-bold mb-6">What am I up to?</h2>
+                <h2 className="text-2xl font-bold mb-6">Where to find me</h2>
                 <ul className="flex space-x-4 mb-8">
                   {[
                     { href: 'https://dysrupt.co.uk', src: 'dysrupt.png', alt: 'Dysrupt' },
