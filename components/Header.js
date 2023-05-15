@@ -34,10 +34,10 @@ const Header = () => {
               Apps
             </button>
             {showMenu && (
-              <ul className="absolute top-full left-0 w-48 bg-white shadow-lg rounded-lg mt-4 z-50 overflow-hidden">
+              <ul className="absolute top-full left-0 w-48 bg-white shadow-lg rounded-lg mt-4 z-50 overflow-hidden dark:bg-gray-800">
                 {appData.map(app => (
                   <li key={app.id} className="">
-                    <Link href={`/apps/${app.id}`} className="block text-lg text-gray-800 py-2 px-4 hover:bg-gray-200">
+                    <Link href={`/apps/${app.id}`} className="block text-lg py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-900">
                       {app.name}
                     </Link>
                   </li>
