@@ -3,6 +3,7 @@
         "id": "futhark",
         "name": "Futhark",
         "icon": "futhark.png",
+        "subtitle": "Learn the world of ancient runes today!",
         "keywords": "rune translator, norse, viking, translator, runes, runic, keyboard, translate, rune, symbol, convert",
         "description": "Welcome to Futhark, the ultimate app for those who seek to unlock the secrets of the Viking era! With our powerful tool, you can easily translate English to Elder Futhark and vice versa, allowing you to delve deep into the world of ancient Nordic history and mythology.\n\nBut that's not all - with Futhark, you can also learn about the runes themselves, their meanings, and the rich symbolism behind each character. Our app features an intuitive runic keyboard, making it easy to type and send messages in this ancient script.\n\nWhether you're a history buff, a language enthusiast, or simply fascinated by the mystique of the Vikings, Futhark is the perfect app for you. So why wait? Download our app today and start exploring the secrets of the runes!",
         "releases": [
@@ -44,6 +45,7 @@
         "id": "percentx",
         "name": "PercentX",
         "icon": "percentx.png",
+        "subtitle": "Calculate percentages with ease!",
         "keywords": "percentage, calculator, discount, calculation, percentage calculator, percent calculator, percent, %",
         "description": "Introducing PercentX, your go-to percentage calculator designed to make your life easier. Whether you're a student, a professional, or simply someone looking for a fast and efficient way to handle percentages, PercentX is the perfect solution.\n\nKey features:\n\n- Sleek, user-friendly interface for seamless navigation\n- Perform calculations such as \"Percentage of,\" \"Add percentage to,\" and \"Subtract percentage from\"\n- Input validation to ensure accurate results\n- Easily copy results to the clipboard with just one tap\n- Clear all input fields with a single button for quick recalculations\n- Receive helpful alerts for invalid inputs or when results are copied to the clipboard\n\nPercentX is designed to be your reliable companion for day-to-day percentage calculations. Its straightforward design and intuitive functionality make it the ideal app for anyone in need of a quick and accurate percentage calculator.\n\nSay goodbye to cumbersome calculations and hello to PercentX – download now to experience the difference for yourself!",
         "releases": [
