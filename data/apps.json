@@ -20,6 +20,14 @@
                     "Improved translator",
                     "Added runic period & colon to keyboard"
                 ]
+            },
+            {
+                "version": "1.2",
+                "changelog": [
+                    "Added Younger Futhark translations",
+                    "Added Younger Futhark keyboard",
+                    "Performance improvements"
+                ]
             }
         ],
         "screenshots": [
