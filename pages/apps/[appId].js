@@ -25,8 +25,8 @@ export default function AppDetails() {
 
   // version history
   const [showOldReleases, setShowOldReleases] = useState(false);
-  const latestRelease = app.releases[app.releases.length - 1];
-  const olderReleases = app.releases.slice(0, app.releases.length - 1).reverse();
+  const latestRelease = app?.releases?.[app.releases.length - 1];
+  const olderReleases = app?.releases?.slice(0, app.releases.length - 1).reverse();
 
   // other apps
   const otherApps = appData.filter((otherApp) => otherApp.id !== appId);
@@ -41,7 +41,7 @@ export default function AppDetails() {
         <title>{app.name} - Tristan Jarrett</title>
         <meta
           name="description"
-          content={`Download ${app.name} today!`}
+          content={app.promo}
         />
         <meta name="keywords" content={app.keywords} />
         <meta name="author" content="Tristan Jarrett" />
