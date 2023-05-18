@@ -83,6 +83,7 @@ export default function AppDetails() {
                 >
                   <Image
                     src="/appstore/badge-preferred.svg"
+                    alt="App Store"
                     width={160}
                     height={160}
                   />
@@ -104,7 +105,7 @@ export default function AppDetails() {
                 <div className="mt-4">
                   <button
                     onClick={() => setShowOldReleases(!showOldReleases)}
-                    className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+                    className="text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   >
                     {showOldReleases ? 'Hide old releases' : 'Show old releases'}
                   </button>
