@@ -28,3 +28,8 @@ body {
 .description > p:last-child {
   margin-bottom: 0; /* Remove bottom margin for the last paragraph */
 }
+
+.app-icon-container {
+  width: 80px;
+  height: 80px;
+}

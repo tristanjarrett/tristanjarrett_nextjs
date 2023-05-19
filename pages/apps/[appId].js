@@ -58,9 +58,9 @@ export default function AppDetails() {
                 <Image
                   src={`/brands/${app.icon}`}
                   alt="App Icon"
-                  width={40}
-                  height={40}
-                  className="rounded-lg border-2 border-gray-200 dark:border-gray-800 mr-4"
+                  width={50}
+                  height={50}
+                  className="rounded-lg shadow-lg mr-4"
                 />
                 <h1 className="text-3xl lg:text-4xl font-bold">{app.name}</h1>
               </div>
@@ -144,19 +144,21 @@ export default function AppDetails() {
         <div className="container mx-auto pb-16 px-4 md:px-0">
           <hr className="border-gray-200 dark:border-gray-800 mb-16" />
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-100 mb-8">My other apps</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {otherApps.map((otherApp) => (
               <Link key={otherApp.id} href={`/apps/${otherApp.id}`}>
                 <div className="group block bg-white dark:bg-gray-800 shadow rounded-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg flex flex-col h-full">
                   <div className="flex items-center p-4 flex-grow">
                     <div className="mr-4">
-                      <Image
-                        src={`/brands/${otherApp.icon}`}
-                        alt="App Icon"
-                        width={80}
-                        height={80}
-                        className="rounded-md"
-                      />
+                      <div className="app-icon-container">
+                        <Image
+                          src={`/brands/${otherApp.icon}`}
+                          alt="App Icon"
+                          width={80}
+                          height={80}
+                          className="rounded-md shadow"
+                        />
+                      </div>
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100">{otherApp.name}</h3>

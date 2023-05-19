@@ -113,27 +113,38 @@ const Home = () => {
 
               <div className="mt-12">
                 <h2 className="text-2xl font-bold mb-6">I've published some apps</h2>
-                <ul className="flex space-x-4 mb-8">
-                  {appData.map(app => (
-                    <li key={app.id} className="group relative">
-                      <Link href={`/apps/${app.id}`} className="block">
-                        <div className="relative">
-                          <Image src={`/brands/${app.icon}`} alt={app.name} width={100} height={100} className="rounded-xl border-2 border-gray-200 dark:border-gray-800" />
-                          <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl flex items-center justify-center">
-                            <FontAwesomeIcon icon={faExternalLinkAlt} size="lg" className="text-white" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+                  {appData.map((app) => (
+                    <Link key={app.id} href={`/apps/${app.id}`}>
+                      <div className="group block bg-white dark:bg-gray-800 shadow rounded-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg flex flex-col h-full">
+                        <div className="flex items-center p-4 flex-grow">
+                          <div className="mr-4">
+                            <div className="app-icon-container">
+                              <Image
+                                src={`/brands/${app.icon}`}
+                                alt="App Icon"
+                                width={80}
+                                height={80}
+                                className="rounded-md shadow"
+                              />
+                            </div>
+                          </div>
+                          <div>
+                            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100">{app.name}</h3>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">{app.subtitle}</p>
                           </div>
                         </div>
-                      </Link>
-                    </li>
+                      </div>
+                    </Link>
                   ))}
-                </ul>
+                </div>
               </div>
 
               <div className="mt-12">
                 <h2 className="text-2xl font-bold mb-6">Where to find me</h2>
                 <ul className="flex space-x-4 mb-8">
                   {[
-                    { href: 'https://dysrupt.co.uk', src: 'dysrupt.png', alt: 'Dysrupt' },
+                    // { href: 'https://dysrupt.co.uk', src: 'dysrupt.png', alt: 'Dysrupt' },
                     { href: 'https://solution17.co.uk', src: 'solution17.jpeg', alt: 'Solution17' },
                     { href: 'https://fyiro.io', src: 'fyiro.png', alt: 'Fyiro' },
                     { href: 'https://nftbulq.com', src: 'bulq.png', alt: 'BulQ' },
@@ -141,7 +152,7 @@ const Home = () => {
                     <li key={alt} className="group relative">
                       <a href={href} target="_blank" rel="noopener noreferrer" className="block">
                         <div className="relative">
-                          <Image src={`/brands/${src}`} alt={alt} width={100} height={100} className="rounded-xl border-2 border-gray-200 dark:border-gray-800" />
+                          <Image src={`/brands/${src}`} alt={alt} width={100} height={100} className="rounded-xl shadow-lg" />
                           <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl flex items-center justify-center">
                             <FontAwesomeIcon icon={faExternalLinkAlt} size="lg" className="text-white" />
                           </div>
