@@ -1,5 +1,6 @@
 import '@/styles/globals.css'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/react';
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCookieBite } from '@fortawesome/free-solid-svg-icons';
@@ -52,6 +53,7 @@ export default function App({ Component, pageProps }) {
       </Script>
       <Script src="https://www.google.com/recaptcha/api.js?render=6Ld0knQlAAAAACK-5SFSB5-VrsfIeQTI4KXd8O6T"></Script>
       <Component {...pageProps} />
+      <Analytics />
       <CookieNotice />
     </>
   )

@@ -13,6 +13,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@vercel/analytics": "^1.0.1",
     "autoprefixer": "10.4.14",
     "emailjs-com": "^3.2.0",
     "next": "13.3.0",
