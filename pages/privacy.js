@@ -52,7 +52,7 @@ const Privacy = () => {
               <p className="mb-6">
                 If you have any questions or concerns regarding our Privacy Policy, please contact us at (hello@tristanjarrett.com).
               </p>
-              <p>Last updated on 5 May 2023</p>
+              <p>Last updated on 2 June 2023</p>
             </div>
           </div>
         </div>
