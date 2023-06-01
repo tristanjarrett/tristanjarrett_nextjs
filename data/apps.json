@@ -78,5 +78,28 @@
             "screenshot3.webp"
         ],
         "appstore_link": "https://apps.apple.com/app/id6448712135"
+    },
+    {
+        "id": "unitx",
+        "name": "UnitX",
+        "icon": "unitx.png",
+        "promo": "UnitX: The Ultimate Unit Converter App for Swift and Seamless Measurement Conversions.",
+        "subtitle": "Convert anything whilst on the go!",
+        "keywords": "unit converter, measurement, speed converter, weight converter, length converter, volume converter",
+        "description": "UnitX is a powerful and intuitive unit converter app that allows you to quickly and easily convert various units of measurement. With support for speed, weight, length, and volume conversions, UnitX provides a comprehensive solution for all your conversion needs. Seamlessly switch between different unit types and select from a wide range of units. Convert with ease and precision using UnitX.",
+        "releases": [
+            {
+                "version": "1.0",
+                "changelog": [
+                    "Initial release"
+                ]
+            }
+        ],
+        "screenshots": [
+            "screenshot1.webp",
+            "screenshot2.webp",
+            "screenshot3.webp"
+        ],
+        "appstore_link": "https://apps.apple.com/app/id6449624472"
     }
 ]
