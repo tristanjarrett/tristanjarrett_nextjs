@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import { useState } from 'react';
 import appData from '@/data/apps.json';
 import Head from 'next/head';
@@ -8,37 +7,29 @@ import ReactMarkdown from 'react-markdown';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function AppDetails() {
-  const router = useRouter();
-  const { appId } = router.query;
-  const app = appData.find((app) => app.id === appId);
+// Custom renderer for unordered lists
+const CustomListRenderer = ({ children }) => (
+  <ul className="list-disc ml-4 mb-4">{children}</ul>
+);
 
-  // Custom renderer for unordered lists
-  const CustomListRenderer = ({ children }) => (
-    <ul className="list-disc ml-4 mb-4">{children}</ul>
-  );
+// Custom renderer for list items
+const CustomListItemRenderer = ({ children }) => (
+  <li>{children}</li>
+);
 
-  // Custom renderer for list items
-  const CustomListItemRenderer = ({ children }) => (
-    <li>{children}</li>
-  );
-
+export default function AppDetails({ app }) {
   // version history
   const [showOldReleases, setShowOldReleases] = useState(false);
   const latestRelease = app?.releases?.[app.releases.length - 1];
   const olderReleases = app?.releases?.slice(0, app.releases.length - 1).reverse();
 
   // other apps
-  const otherApps = appData.filter((otherApp) => otherApp.id !== appId);
-
-  if (!app) {
-    return <div>App not found!</div>;
-  }
+  const otherApps = appData.filter((otherApp) => otherApp.id !== app.id);
 
   return (
     <>
       <Head>
-        <title>{app.name} - Tristan Jarrett</title>
+        <title>{app.name} | {app.subtitle}</title>
         <meta
           name="description"
           content={app.promo}
@@ -175,4 +166,22 @@ export default function AppDetails() {
       </div>
     </>
   );
+}
+
+// This function runs on the server before the page is rendered
+export async function getServerSideProps(context) {
+  const { appId } = context.params;
+  const app = appData.find((app) => app.id === appId);
+
+  // If we couldn't find the app, return a 404 status
+  if (!app) {
+    return {
+      notFound: true,
+    };
+  }
+
+  // Otherwise, return the app data as props
+  return {
+    props: { app },
+  };
 }
