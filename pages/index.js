@@ -48,7 +48,7 @@ const Home = () => {
         <div className="container px-4 mx-auto flex-grow">
           <div className="py-16 lg:py-24 flex flex-col lg:flex-row justify-center items-start lg:space-x-20">
             <div className="w-full lg:w-2/3">
-              <h1 className="text-5xl font-bold mb-10 lg:pr-20">
+              <h1 className="text-4xl md:text-5xl font-bold mb-10 lg:pr-20">
                 Hey! I'm <span className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500">Tristan</span>, a Software Engineer with nearly ten years of experience.
               </h1>
 
