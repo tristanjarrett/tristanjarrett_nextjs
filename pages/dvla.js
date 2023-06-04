@@ -26,7 +26,7 @@ const Dvla = () => {
   return (
     <>
       <Head>
-        <title>DVLA Vehicle Enquiry - Tristan Jarrett</title>
+        <title>DVLA Vehicle Enquiry</title>
         <meta name="description" content="Perform a DVLA vehicle enquiry." />
         <meta name="keywords" content="DVLA, vehicle enquiry" />
         <meta name="author" content="Tristan Jarrett" />

@@ -6,7 +6,7 @@ const Privacy = () => {
   return (
     <>
       <Head>
-        <title>Privacy Policy - Tristan Jarrett</title>
+        <title>Privacy Policy</title>
         <meta name="description" content="Read our privacy policy to understand how we collect, use, and protect your personal data on our website and in our apps." />
         <meta name="keywords" content="privacy policy, data protection, website, app" />
         <meta name="author" content="Tristan Jarrett" />

@@ -6,7 +6,7 @@ const NotFound = () => {
   return (
     <>
       <Head>
-        <title>404: Page Not Found - Tristan Jarrett</title>
+        <title>404: Page Not Found</title>
         <meta name="description" content="We couldn't find the page you were looking for." />
         <meta name="keywords" content="404, not found" />
         <meta name="author" content="Tristan Jarrett" />
