@@ -8,9 +8,11 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 const Dvla = () => {
   const [vehicleData, setVehicleData] = useState(null);
   const [registrationNumber, setRegistrationNumber] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     try {
       const response = await fetch(`/api/dvla?registrationNumber=${registrationNumber}`);
       const data = await response.json();
@@ -18,6 +20,7 @@ const Dvla = () => {
     } catch (error) {
       console.error(error);
     }
+    setIsLoading(false);
   };
 
   return (
@@ -55,6 +58,9 @@ const Dvla = () => {
                   </div>
                 </button>
               </form>
+              {isLoading && (
+                <p className="text-gray-500 mt-4">Loading...</p>
+              )}
               {vehicleData && (
                 <div className="bg-white rounded-xl shadow-lg p-6 text-left mt-8 dark:bg-gray-800">
                   <h2 className="text-2xl font-bold mb-2">Vehicle Information</h2>
@@ -78,14 +84,14 @@ const Dvla = () => {
                       <p>
                         <strong>Year of Manufacture:</strong> {vehicleData.yearOfManufacture}
                       </p>
-                    </div>
-                    <div>
                       <p>
                         <strong>Engine Capacity:</strong> {vehicleData.engineCapacity}
                       </p>
                       <p>
                         <strong>CO2 Emissions:</strong> {vehicleData.co2Emissions}
                       </p>
+                    </div>
+                    <div>
                       <p>
                         <strong>Fuel Type:</strong> {vehicleData.fuelType}
                       </p>
@@ -98,8 +104,6 @@ const Dvla = () => {
                       <p>
                         <strong>Type Approval:</strong> {vehicleData.typeApproval}
                       </p>
-                    </div>
-                    <div>
                       <p>
                         <strong>Date of Last V5C Issued:</strong> {vehicleData.dateOfLastV5CIssued}
                       </p>
