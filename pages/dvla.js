@@ -58,7 +58,7 @@ const Dvla = () => {
               {vehicleData && (
                 <div className="bg-white rounded-xl shadow-lg p-6 text-left mt-8 dark:bg-gray-800">
                   <h2 className="text-2xl font-bold mb-2">Vehicle Information</h2>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <p>
                         <strong>Registration Number:</strong> {vehicleData.registrationNumber}
