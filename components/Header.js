@@ -42,6 +42,11 @@ const Header = () => {
                     </Link>
                   </li>
                 ))}
+                <li>
+                  <Link href="/dvla" className="block text-lg py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-900">
+                    DVLA Lookup
+                  </Link>
+                </li>
               </ul>
             )}
           </div>
@@ -64,6 +69,11 @@ const Header = () => {
                 </Link>
               </li>
             ))}
+            <li className="py-1">
+              <Link href="/dvla" className="text-white hover:underline">
+                DVLA Lookup
+              </Link>
+            </li>
           </ul>
         </div>
         <a href="https://medium.com/@tristanjarrett" className="block py-4 text-xl font-medium text-white hover:underline px-4">
