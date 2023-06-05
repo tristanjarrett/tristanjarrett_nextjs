@@ -9,16 +9,27 @@ const Dvla = () => {
   const [vehicleData, setVehicleData] = useState(null);
   const [registrationNumber, setRegistrationNumber] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+
+    if (registrationNumber.trim() === '') {
+      // Display error message for blank search
+      setIsLoading(false);
+      setError(true);
+      setErrorMessage("Please enter a registration number.");
+      return;
+    }
 
     try {
       const token = await grecaptcha.execute('6Ld0knQlAAAAACK-5SFSB5-VrsfIeQTI4KXd8O6T', { action: 'submit' });
       const response = await fetch(`/api/dvla?registrationNumber=${registrationNumber}&recaptchaToken=${token}`);
       const data = await response.json();
       setVehicleData(data);
+      setError(false);
     } catch (error) {
       console.error(error);
     }
@@ -50,12 +61,15 @@ const Dvla = () => {
                     value={registrationNumber}
                     onChange={(e) => setRegistrationNumber(e.target.value)}
                     placeholder="Enter registration number"
-                    className="border-2 border-gray-300 px-4 py-4 w-full mb-6 rounded-md focus:border-purple-500 dark:focus:border-orange-500 focus:outline-none transition-colors dark:bg-gray-700 dark:border-gray-500"
+                    className="border-2 border-gray-300 px-4 py-4 w-full rounded-md focus:border-purple-500 dark:focus:border-orange-500 focus:outline-none transition-colors dark:bg-gray-700 dark:border-gray-500"
                   />
+                  {error && (
+                    <p className="text-red-500 mt-2 text-left">This field is required</p>
+                  )}
                   <input type="hidden" id="recaptchaResponse" name="recaptchaResponse" />
                   <button
                     type="submit"
-                    className="bg-gradient-to-br w-full from-blue-500 via-purple-500 to-indigo-500 text-white font-bold px-8 py-4 rounded-md hover:from-blue-600 hover:via-purple-600 hover:to-indigo-600 dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500 dark:hover:from-yellow-400 dark:hover:via-orange-400 dark:hover:to-pink-400"
+                    className="bg-gradient-to-br w-full mt-6 from-blue-500 via-purple-500 to-indigo-500 text-white font-bold px-8 py-4 rounded-md hover:from-blue-600 hover:via-purple-600 hover:to-indigo-600 dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500 dark:hover:from-yellow-400 dark:hover:via-orange-400 dark:hover:to-pink-400"
                   >
                     {isLoading ? (
                       <span>Loading...</span>
