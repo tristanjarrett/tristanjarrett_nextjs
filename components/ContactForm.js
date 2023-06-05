@@ -45,7 +45,7 @@ const ContactForm = () => {
     <form
       onSubmit={handleSubmit(onSubmit)}
       id="contact-form"
-      className="w-full mx-auto p-4 md:p-8 bg-white rounded-xl shadow-lg dark:bg-gray-800"
+      className="w-full mx-auto p-6 md:p-8 bg-white rounded-xl shadow-lg dark:bg-gray-800"
     >
       <div className="mb-6 w-full">
         <label htmlFor="name" className="block font-semibold mb-2">
