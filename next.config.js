@@ -8,6 +8,16 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/tools',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/dvla',
+        destination: '/tools/dvla',
+        permanent: true,
+      },
     ];
   },
 }

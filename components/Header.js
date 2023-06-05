@@ -7,10 +7,26 @@ import Link from 'next/link';
 import appData from '@/data/apps.json';
 
 const Header = () => {
-  const [showMenu, setShowMenu] = useState(false);
+  const [showAppsMenu, setShowAppsMenu] = useState(false);
+  const [showToolsMenu, setShowToolsMenu] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
-  const handleMenuClick = () => {
-    setShowMenu(!showMenu);
+  const handleAppsMenuClick = () => {
+    setShowAppsMenu(!showAppsMenu);
+    setShowToolsMenu(false);
+    setShowMobileMenu(false);
+  };
+
+  const handleToolsMenuClick = () => {
+    setShowToolsMenu(!showToolsMenu);
+    setShowAppsMenu(false);
+    setShowMobileMenu(false);
+  };
+
+  const handleMobileMenuClick = () => {
+    setShowMobileMenu(!showMobileMenu);
+    setShowAppsMenu(false);
+    setShowToolsMenu(false);
   };
 
   return (
@@ -21,19 +37,19 @@ const Header = () => {
           <span className="text-xl font-semibold text-white">Tristan Jarrett</span>
         </a>
         <div className="flex sm:hidden">
-          <button className="text-white text-3xl focus:outline-none" onClick={handleMenuClick}>
-            <FontAwesomeIcon icon={showMenu ? faXmark : faBars} />
+          <button className="text-white text-3xl focus:outline-none" onClick={handleMobileMenuClick}>
+            <FontAwesomeIcon icon={showMobileMenu ? faXmark : faBars} />
           </button>
         </div>
         <div className="hidden sm:flex">
           <div className="relative group mr-4">
             <button
               className="text-xl font-medium text-white hover:underline focus:outline-none"
-              onClick={handleMenuClick}
+              onClick={handleAppsMenuClick}
             >
               Apps
             </button>
-            {showMenu && (
+            {showAppsMenu && (
               <ul className="absolute top-full left-0 w-48 bg-white shadow-lg rounded-lg mt-4 z-50 overflow-hidden dark:bg-gray-800">
                 {appData.map(app => (
                   <li key={app.id} className="">
@@ -42,8 +58,20 @@ const Header = () => {
                     </Link>
                   </li>
                 ))}
+              </ul>
+            )}
+          </div>
+          <div className="relative group mr-4">
+            <button
+              className="text-xl font-medium text-white hover:underline focus:outline-none"
+              onClick={handleToolsMenuClick}
+            >
+              Tools
+            </button>
+            {showToolsMenu && (
+              <ul className="absolute top-full left-0 w-48 bg-white shadow-lg rounded-lg mt-4 z-50 overflow-hidden dark:bg-gray-800">
                 <li>
-                  <Link href="/dvla" className="block text-lg py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-900">
+                  <Link href="/tools/dvla" className="block text-lg py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-900">
                     DVLA Lookup
                   </Link>
                 </li>
@@ -58,7 +86,7 @@ const Header = () => {
           </a>
         </div>
       </nav>
-      <div className={`sm:hidden ${showMenu ? 'block' : 'hidden'}`}>
+      <div className={`sm:hidden ${showMobileMenu ? 'block' : 'hidden'}`}>
         <div className="py-4 px-4">
           <h3 className="text-lg font-medium text-white">Apps</h3>
           <ul className="mt-2">
@@ -69,8 +97,13 @@ const Header = () => {
                 </Link>
               </li>
             ))}
+          </ul>
+        </div>
+        <div className="py-4 px-4">
+          <h3 className="text-lg font-medium text-white">Tools</h3>
+          <ul className="mt-2">
             <li className="py-1">
-              <Link href="/dvla" className="text-white hover:underline">
+              <Link href="/tools/dvla" className="text-white hover:underline">
                 DVLA Lookup
               </Link>
             </li>
