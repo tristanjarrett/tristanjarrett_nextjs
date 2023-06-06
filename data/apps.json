@@ -93,6 +93,12 @@
                 "changelog": [
                     "Initial release"
                 ]
+            },
+            {
+                "version": "1.0.1",
+                "changelog": [
+                    "Minor bug fix"
+                ]
             }
         ],
         "screenshots": [
