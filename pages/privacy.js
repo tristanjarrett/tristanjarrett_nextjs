@@ -6,11 +6,21 @@ const Privacy = () => {
   return (
     <>
       <Head>
-        <title>Privacy Policy</title>
-        <meta name="description" content="Read our privacy policy to understand how we collect, use, and protect your personal data on our website and in our apps." />
+        <title>Privacy Policy | Tristan Jarrett</title>
+        <meta
+          name="description"
+          content="Read our privacy policy to understand how we collect, use, and protect your personal data on our website and in our apps."
+        />
         <meta name="keywords" content="privacy policy, data protection, website, app" />
         <meta name="author" content="Tristan Jarrett" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="bingbot" content="index, follow" />
+        <meta name="rating" content="general" />
+        <meta name="revisit-after" content="7 days" />
+        <link rel="canonical" href="https://tristanjarrett.com/privacy" />
       </Head>
 
       <div className="bg-gray-100 min-h-screen flex flex-col font-sans dark:bg-gray-900">
