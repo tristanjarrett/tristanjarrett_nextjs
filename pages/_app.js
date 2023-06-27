@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCookieBite } from '@fortawesome/free-solid-svg-icons';
+import '@fortawesome/fontawesome-svg-core/styles.css'
 
 const CookieNotice = () => {
   const [isVisible, setIsVisible] = useState(true);

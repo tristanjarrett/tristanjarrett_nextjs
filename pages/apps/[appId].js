@@ -37,7 +37,7 @@ export default function AppDetails({ app }) {
         <meta name="keywords" content={app.keywords} />
         <meta name="author" content="Tristan Jarrett" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="robots" content="index, follow" />
         <meta name="googlebot" content="index, follow" />
         <meta name="bingbot" content="index, follow" />
