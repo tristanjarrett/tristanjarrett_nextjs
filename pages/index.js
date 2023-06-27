@@ -218,22 +218,7 @@ const Home = () => {
                 <h2 className="text-2xl font-bold mb-6">Where to find me</h2>
                 <ul className="flex space-x-4 mb-8">
                   {[
-                    // { href: 'https://dysrupt.co.uk', src: 'dysrupt.png', alt: 'Dysrupt' },
-                    {
-                      href: "https://solution17.co.uk",
-                      src: "solution17.jpeg",
-                      alt: "Solution17",
-                    },
-                    {
-                      href: "https://fyiro.io",
-                      src: "fyiro.png",
-                      alt: "Fyiro",
-                    },
-                    {
-                      href: "https://nftbulq.com",
-                      src: "bulq.png",
-                      alt: "BulQ",
-                    },
+                    { href: 'https://dysrupt.co.uk', src: 'dysrupt.png', alt: 'Dysrupt' },
                   ].map(({ href, src, alt }) => (
                     <li key={alt} className="group relative">
                       <a
