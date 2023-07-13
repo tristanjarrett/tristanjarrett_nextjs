@@ -11,6 +11,7 @@ import {
   faGithub,
   faInstagram,
   faYoutube,
+  faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkAlt, faCoffee } from "@fortawesome/free-solid-svg-icons";
 
@@ -111,7 +112,7 @@ const Home = () => {
                 <li>
                   <a
                     href="https://www.linkedin.com/in/tristanjarrett"
-                    className="hover:text-blue-500"
+                    className="hover:text-blue-600"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -128,6 +129,17 @@ const Home = () => {
                   >
                     <span className="sr-only">Instagram</span>
                     <FontAwesomeIcon icon={faInstagram} size="2x" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://twitter.com/tristangjarrett"
+                    className="hover:text-blue-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="sr-only">Twitter</span>
+                    <FontAwesomeIcon icon={faTwitter} size="2x" />
                   </a>
                 </li>
                 <li>
