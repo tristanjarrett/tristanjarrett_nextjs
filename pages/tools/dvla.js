@@ -34,8 +34,16 @@ const Dvla = () => {
         `/api/dvla?registrationNumber=${registrationNumber}&recaptchaToken=${token}`
       );
       const data = await response.json();
-      setVehicleData(data);
-      setError(false);
+
+      if (data.error) {
+        // Handle the case where no response is found
+        setError(true);
+        setErrorMessage("No vehicle data found for this registration number.");
+        setVehicleData(null);
+      } else {
+        setVehicleData(data);
+        setError(false);
+      }
     } catch (error) {
       console.error(error);
     }
@@ -83,7 +91,7 @@ const Dvla = () => {
                   />
                   {error && (
                     <p className="text-red-500 mt-2 text-left">
-                      This field is required
+                      {errorMessage}
                     </p>
                   )}
                   <input
@@ -113,11 +121,10 @@ const Dvla = () => {
                       <div className="flex items-center justify-between">
                         <h3 className="text-xl font-bold">Tax Status</h3>
                         <p
-                          className={`rounded-md text-white py-2 px-3 ${
-                            vehicleData.taxStatus === "Taxed"
+                          className={`rounded-md text-white py-2 px-3 ${vehicleData.taxStatus === "Taxed"
                               ? "bg-green-500"
                               : "bg-red-500"
-                          }`}
+                            }`}
                         >
                           {vehicleData.taxStatus === "Taxed"
                             ? "Taxed"
@@ -144,11 +151,10 @@ const Dvla = () => {
                           </p>
                         ) : (
                           <p
-                            className={`rounded-md text-white py-2 px-3 ${
-                              vehicleData.motStatus === "Valid"
+                            className={`rounded-md text-white py-2 px-3 ${vehicleData.motStatus === "Valid"
                                 ? "bg-green-500"
                                 : "bg-red-500"
-                            }`}
+                              }`}
                           >
                             {vehicleData.motStatus === "Valid"
                               ? "Valid"
