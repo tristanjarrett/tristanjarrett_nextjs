@@ -37,6 +37,12 @@
                     "User feedback prompt",
                     "General maintenance"
                 ]
+            },
+            {
+                "version": "1.2.2",
+                "changelog": [
+                    "General maintenance"
+                ]
             }
         ],
         "screenshots": [

@@ -10,8 +10,7 @@ import {
   faLinkedin,
   faGithub,
   faInstagram,
-  faYoutube,
-  faTwitter,
+  faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkAlt, faCoffee } from "@fortawesome/free-solid-svg-icons";
 
@@ -91,7 +90,7 @@ const Home = () => {
                 <span className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500">
                   Tristan
                 </span>
-                , a Software Engineer with nearly ten years of experience.
+                , a Software Engineer with over ten years of experience.
               </h1>
 
               <p className="text-xl mb-4">
@@ -122,6 +121,17 @@ const Home = () => {
                 </li>
                 <li>
                   <a
+                    href="https://x.com/tristangjarrett"
+                    className="hover:text-blue-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="sr-only">X</span>
+                    <FontAwesomeIcon icon={faXTwitter} size="2x" />
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="https://instagram.com/tristangjarrett"
                     className="hover:text-pink-500"
                     target="_blank"
@@ -133,17 +143,6 @@ const Home = () => {
                 </li>
                 <li>
                   <a
-                    href="https://twitter.com/tristangjarrett"
-                    className="hover:text-blue-400"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span className="sr-only">Twitter</span>
-                    <FontAwesomeIcon icon={faTwitter} size="2x" />
-                  </a>
-                </li>
-                <li>
-                  <a
                     href="https://github.com/tristanjarrett"
                     className="hover:text-gray-500"
                     target="_blank"
@@ -151,28 +150,6 @@ const Home = () => {
                   >
                     <span className="sr-only">GitHub</span>
                     <FontAwesomeIcon icon={faGithub} size="2x" />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.youtube.com/@tristangjarrett"
-                    className="hover:text-red-500"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span className="sr-only">YouTube</span>
-                    <FontAwesomeIcon icon={faYoutube} size="2x" />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://ko-fi.com/tristanjarrett"
-                    className="hover:text-orange-500"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span className="sr-only">Ko-fi</span>
-                    <FontAwesomeIcon icon={faCoffee} size="2x" />
                   </a>
                 </li>
               </ul>
