@@ -26,6 +26,8 @@ const Home = () => {
     { name: "Dart" },
     { name: "Next.js" },
     { name: "SwiftUI" },
+    { name: "Firebase" },
+    { name: "Unity" },
     { name: "Computer Vision" },
   ];
 
