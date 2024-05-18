@@ -89,7 +89,7 @@ const Home = () => {
         />
         <link rel="icon" href="/icon.svg" alt="TJ" />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="##002554"></meta>
+        <meta name="theme-color" content="#002554"></meta>
       </Head>
 
       <div className="bg-gray-100 min-h-screen flex flex-col font-sans dark:bg-gray-900">
