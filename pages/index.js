@@ -31,6 +31,14 @@ const Home = () => {
     { name: "Computer Vision" },
   ];
 
+  const hobbies = [
+    { name: "☕️" },
+    { name: "🥾" },
+    { name: "📷" },
+    { name: "🐠" },
+    { name: "👨🏼‍💻" },
+  ];
+
   return (
     <>
       <Head>
@@ -96,17 +104,11 @@ const Home = () => {
               </h1>
 
               <p className="text-xl mb-4">
-                I have worked on a wide variety of projects, including website
-                development, mobile app development, SaaS solutions, and Web3
-                applications that leverage smart contracts and cryptocurrencies.
-                As a seasoned professional, I am dedicated to delivering
-                high-quality work and helping my clients achieve their
-                objectives.
+                I am a seasoned professional with experience in website development, mobile app development, SaaS solutions, Web3 applications, and VR development. I'm dedicated to delivering high-quality work that helps my clients achieve their goals with innovative and reliable solutions.
               </p>
 
               <p className="text-xl mb-4">
-                In my free time, I enjoy exploring new cafes, hiking, driving
-                cars, and building apps.
+                In my free time, I love exploring new cafes, hiking, photography, and building apps. I also enjoy fishkeeping and have a small collection of freshwater fish.
               </p>
 
               <ul className="flex space-x-4 mt-8">
@@ -157,12 +159,26 @@ const Home = () => {
               </ul>
 
               <div className="mt-12">
-                <h2 className="text-2xl font-bold mb-6">My #TechStack</h2>
+                <h2 className="text-2xl font-bold mb-6">Tech Stack</h2>
                 <div className="flex flex-wrap gap-2">
                   {techStack.map((tech) => (
                     <span
                       key={tech.name}
                       className="px-2 py-1 rounded-lg bg-gray-200 dark:bg-gray-800"
+                    >
+                      {tech.name}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold mb-6">Hobbies</h2>
+                <div className="flex flex-wrap gap-2">
+                  {hobbies.map((tech) => (
+                    <span
+                      key={tech.name}
+                      className="px-2 py-2 rounded-lg bg-gray-200 dark:bg-gray-800 text-4xl"
                     >
                       {tech.name}
                     </span>
