@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Icon from '@/public/icon.webp';
+import Icon from '@/public/icon.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
@@ -34,7 +34,7 @@ const Header = () => {
       <nav className="p-4 flex justify-between items-center">
         <a href="/" className="flex items-center">
           <Image src={Icon} width={50} height={50} className="mr-4" alt="Icon" />
-          <span className="text-xl font-semibold text-white">Tristan Jarrett</span>
+          {/* <span className="text-xl font-semibold text-white">Tristan Jarrett</span> */}
         </a>
         <div className="flex sm:hidden">
           <button className="text-white text-3xl focus:outline-none" onClick={handleMobileMenuClick}>
