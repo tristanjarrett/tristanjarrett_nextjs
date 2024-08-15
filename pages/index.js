@@ -28,6 +28,7 @@ const Home = () => {
     { name: "SwiftUI" },
     { name: "Firebase" },
     { name: "Unity" },
+    { name: "C#" },
     { name: "Computer Vision" },
   ];
 
