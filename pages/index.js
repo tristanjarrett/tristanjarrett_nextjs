@@ -230,7 +230,7 @@ const Home = () => {
                 <ul className="flex space-x-4 mb-8">
                   {[
                     { href: 'https://dysrupt.co.uk', src: 'dysrupt.png', alt: 'Dysrupt' },
-                    { href: 'https://etcstores.co.uk', src: 'etc.png', alt: 'ETC Commerce' },
+                    { href: 'https://www.fiverr.com/tristanjarrett', src: 'fiverr.png', alt: 'Fiverr' },
                   ].map(({ href, src, alt }) => (
                     <li key={alt} className="group relative">
                       <a
