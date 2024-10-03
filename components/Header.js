@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Icon from '@/public/icon.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,6 +10,49 @@ const Header = () => {
   const [showAppsMenu, setShowAppsMenu] = useState(false);
   const [showToolsMenu, setShowToolsMenu] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+    document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+    document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+      document.removeEventListener('webkitfullscreenchange', handleFullscreenChange);
+      document.removeEventListener('mozfullscreenchange', handleFullscreenChange);
+      document.removeEventListener('MSFullscreenChange', handleFullscreenChange);
+    };
+  }, []);
+
+  const toggleFullscreen = () => {
+    if (isFullscreen) {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.mozCancelFullScreen) { /* Firefox */
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) { /* IE/Edge */
+        document.msExitFullscreen();
+      }
+    } else {
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+      } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
+        document.documentElement.mozRequestFullScreen();
+      } else if (document.documentElement.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+        document.documentElement.webkitRequestFullscreen();
+      } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
+        document.documentElement.msRequestFullscreen();
+      }
+    }
+  };
 
   const handleAppsMenuClick = () => {
     setShowAppsMenu(!showAppsMenu);
@@ -30,21 +73,40 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-blue-950 shadow-lg">
-      <nav className="p-4 flex justify-between items-center">
-        <a href="/" className="flex items-center">
-          <Image src={Icon} width={50} height={50} className="mr-4" alt="Icon" />
-          {/* <span className="text-xl font-semibold text-white">Tristan Jarrett</span> */}
-        </a>
+    <header className="bg-blue-950 shadow-lg mx-3 mt-3 rounded-xl">
+      <nav className="py-4 px-6 flex justify-between items-center">
+
+        <div className="flex items-center">
+          <div
+            className="w-3 h-3 bg-red-500 rounded-full mr-2"
+            onClick={() => alert("Please don't leave without saying goodbye! (or at least a message)")}
+          />
+          <div
+            className="w-3 h-3 bg-yellow-500 rounded-full mr-2"
+            onClick={() => {
+              if (!window.location.href.includes('/#contact')) {
+                window.location.href = '/#contact';
+              }
+            }}
+          />
+          <div
+            className="w-3 h-3 bg-green-500 rounded-full"
+            onClick={toggleFullscreen}
+          />
+        </div>
+
         <div className="flex sm:hidden">
           <button className="text-white text-3xl focus:outline-none" onClick={handleMobileMenuClick}>
             <FontAwesomeIcon icon={showMobileMenu ? faXmark : faBars} />
           </button>
         </div>
         <div className="hidden sm:flex">
+          <a href="/" className="text-xl font-medium text-gray-200 hover:underline mr-4">
+            Profile
+          </a>
           <div className="relative group mr-4">
             <button
-              className="text-xl font-medium text-white hover:underline focus:outline-none"
+              className="text-xl font-medium text-gray-200 hover:underline focus:outline-none"
               onClick={handleAppsMenuClick}
             >
               Apps
@@ -63,7 +125,7 @@ const Header = () => {
           </div>
           <div className="relative group mr-4">
             <button
-              className="text-xl font-medium text-white hover:underline focus:outline-none"
+              className="text-xl font-medium text-gray-200 hover:underline focus:outline-none"
               onClick={handleToolsMenuClick}
             >
               Tools
@@ -78,15 +140,18 @@ const Header = () => {
               </ul>
             )}
           </div>
-          <a href="https://medium.com/@tristanjarrett" className="text-xl font-medium text-white hover:underline mr-4">
+          <a href="https://medium.com/@tristanjarrett" className="text-xl font-medium text-gray-200 hover:underline mr-4">
             Blog
           </a>
-          <a href="/#contact" className="text-xl font-medium text-white hover:underline">
-            Get in touch!
+          <a href="/#contact" className="text-xl font-medium text-gray-200 hover:underline">
+            Contact
           </a>
         </div>
       </nav>
       <div className={`sm:hidden ${showMobileMenu ? 'block' : 'hidden'}`}>
+        <a href="/" className="block py-4 text-xl font-medium text-white hover:underline px-4">
+          Profile
+        </a>
         <div className="py-4 px-4">
           <h3 className="text-lg font-medium text-white">Apps</h3>
           <ul className="mt-2">
@@ -113,7 +178,7 @@ const Header = () => {
           Blog
         </a>
         <a href="/#contact" className="block py-4 text-xl font-medium text-white hover:underline px-4">
-          Get in touch!
+          Contact
         </a>
       </div>
     </header>

@@ -231,6 +231,7 @@ const Home = () => {
                   {[
                     { href: 'https://dysrupt.co.uk', src: 'dysrupt.png', alt: 'Dysrupt' },
                     { href: 'https://www.fiverr.com/tristanjarrett', src: 'fiverr.png', alt: 'Fiverr' },
+                    { href: 'https://www.upwork.com/freelancers/~0151e0fcdbb73a2e76', src: 'upwork.png', alt: 'Upwork' },
                   ].map(({ href, src, alt }) => (
                     <li key={alt} className="group relative">
                       <a
@@ -261,7 +262,7 @@ const Home = () => {
                 </ul>
               </div>
 
-              <div id="contact" className="mt-12">
+              <div id="contact" className="mt-4 pt-8">
                 <h2 className="text-2xl font-bold mb-6">Get in touch!</h2>
                 <ContactForm />
               </div>
