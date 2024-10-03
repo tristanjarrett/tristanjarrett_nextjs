@@ -74,6 +74,7 @@ const Header = () => {
 
   return (
     <header className="bg-blue-950 shadow-lg mx-3 mt-3 rounded-xl">
+      
       <nav className="py-4 px-6 flex justify-between items-center">
 
         <div className="flex items-center">
@@ -100,6 +101,7 @@ const Header = () => {
             <FontAwesomeIcon icon={showMobileMenu ? faXmark : faBars} />
           </button>
         </div>
+
         <div className="hidden sm:flex">
           <a href="/" className="text-xl font-medium text-gray-200 hover:underline mr-4">
             Profile
@@ -148,39 +150,43 @@ const Header = () => {
           </a>
         </div>
       </nav>
-      <div className={`sm:hidden ${showMobileMenu ? 'block' : 'hidden'}`}>
-        <a href="/" className="block py-4 text-xl font-medium text-white hover:underline px-4">
+
+      <div className={`sm:hidden pb-2 ${showMobileMenu ? 'block' : 'hidden'}`}>
+        <a href="/" className="block py-2 text-xl font-medium text-white hover:underline px-4">
           Profile
         </a>
-        <div className="py-4 px-4">
+        <div className="py-2 px-4">
           <h3 className="text-lg font-medium text-white">Apps</h3>
           <ul className="mt-2">
             {appData.map(app => (
-              <li key={app.id} className="py-1">
-                <Link href={`/apps/${app.id}`} className="text-white hover:underline">
+              <li key={app.id} className="py-1 text-white">
+                <span className='mr-2'>-</span>
+                <Link href={`/apps/${app.id}`} className="hover:underline">
                   {app.name}
                 </Link>
               </li>
             ))}
           </ul>
         </div>
-        <div className="py-4 px-4">
+        <div className="py-2 px-4">
           <h3 className="text-lg font-medium text-white">Tools</h3>
           <ul className="mt-2">
-            <li className="py-1">
-              <Link href="/tools/dvla" className="text-white hover:underline">
-                DVLA Lookup
+            <li className="py-1 text-white">
+              <span className='mr-2'>-</span>
+              <Link href="/tools/dvla" className="hover:underline">
+                DVLA Tax & MOT Checker (UK)
               </Link>
             </li>
           </ul>
         </div>
-        <a href="https://medium.com/@tristanjarrett" className="block py-4 text-xl font-medium text-white hover:underline px-4">
+        <a href="https://medium.com/@tristanjarrett" className="block py-2 text-xl font-medium text-white hover:underline px-4">
           Blog
         </a>
-        <a href="/#contact" className="block py-4 text-xl font-medium text-white hover:underline px-4">
+        <a href="/#contact" className="block py-2 text-xl font-medium text-white hover:underline px-4">
           Contact
         </a>
       </div>
+
     </header>
   );
 };
