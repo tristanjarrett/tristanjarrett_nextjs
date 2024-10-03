@@ -43,6 +43,20 @@
                 "changelog": [
                     "General maintenance"
                 ]
+            },
+            {
+                "version": "1.3.0",
+                "changelog": [
+                    "Extended rune knowledge base",
+                    "New tab to shop rune inspired items",
+                    "General updates & improvements"
+                ]
+            },
+            {
+                "version": "1.3.1",
+                "changelog": [
+                    "General maintenance"
+                ]
             }
         ],
         "screenshots": [
@@ -83,6 +97,21 @@
                 "changelog": [
                     "Minor UI improvements"
                 ]
+            },
+            {
+                "version": "1.2",
+                "changelog": [
+                    "Redesigned UI throughout",
+                    "New home screen menu",
+                    " 5 new interest rate calculators (Fixed Interest Rate, Variable Interest Rate, Annual Percentage Rate, Simple Interest Rate, and Compound Interest Rate)"
+                ]
+            },
+            {
+                "version": "1.2.1",
+                "changelog": [
+                    "Minor UI improvements",
+                    "Interest rate formula fix"
+                ]
             }
         ],
         "screenshots": [
@@ -112,6 +141,18 @@
                 "changelog": [
                     "Minor bug fix"
                 ]
+            },
+            {
+                "version": "1.0.2",
+                "changelog": [
+                    "General updates"
+                ]
+            },
+            {
+                "version": "1.0.3",
+                "changelog": [
+                    "Minor UI improvements"
+                ]
             }
         ],
         "screenshots": [
@@ -119,6 +160,7 @@
             "screenshot2.webp",
             "screenshot3.webp"
         ],
-        "appstore_link": "https://apps.apple.com/app/id6449624472"
+        "appstore_link": "https://apps.apple.com/app/id6449624472",
+        "playstore_link": "https://play.google.com/store/apps/details?id=com.tristanjarrett.unitx"
     }
 ]

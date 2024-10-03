@@ -73,6 +73,7 @@ export default function AppDetails({ app }) {
                 </ReactMarkdown>
               </div>
               <div className="mt-8">
+                <div className="flex items-center mb-4">
                 <a
                   href={app.appstore_link}
                   target="_blank"
@@ -86,6 +87,22 @@ export default function AppDetails({ app }) {
                     height={160}
                   />
                 </a>
+                {app.playstore_link && (
+                  <a
+                    href={app.playstore_link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block ml-4"
+                  >
+                    <Image
+                      src="/playstore/playstore.svg"
+                      alt="Play Store"
+                      width={180}
+                      height={180}
+                    />
+                  </a>
+                )}
+                </div>
               </div>
               <h2 className="mt-8">Releases:</h2>
               <ul className="mt-4">
