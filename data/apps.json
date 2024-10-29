@@ -162,27 +162,5 @@
         ],
         "appstore_link": "https://apps.apple.com/app/id6449624472",
         "playstore_link": "https://play.google.com/store/apps/details?id=com.tristanjarrett.unitx"
-    },
-    {
-        "id": "tapme",
-        "name": "Tap Me!",
-        "icon": "tapme.png",
-        "promo": "How fast can you tap? Challenge yourself in this simple yet addictive game. No strategy needed, just tap! Try to beat your high score in endless fun.",
-        "subtitle": "Just try it.",
-        "keywords": "tap game, high score, casual, fast tapping, time waster, reflex, simple, addictive, fun, challenge",
-        "description": "Tap Me! (Pointless) is a hilariously simple game with no purpose other than to test how fast you can tap! Perfect for quick fun or wasting time, this game challenges you to tap the button as many times as you can before the timer runs out. The higher your score, the better—though we can't promise any rewards other than bragging rights!",
-        "releases": [
-            {
-                "version": "1.0",
-                "changelog": [
-                    "Initial release"
-                ]
-            }
-        ],
-        "screenshots": [
-            "screenshot1.jpg",
-            "screenshot2.jpg"
-        ],
-        "appstore_link": "https://apps.apple.com/app/id6737177876"
     }
 ]

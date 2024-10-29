@@ -31,7 +31,7 @@ const Privacy = () => {
             <div className="lg:w-3/5">
               <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
               <p className="mb-6">
-                This privacy policy discloses the privacy practices for Tristan Jarrett and our website (tristanjarrett.com) and mobile applications (Futhark, PercentX, UnitX & Tap Me!). This privacy policy applies solely to information collected by this website and our mobile applications.
+                This privacy policy discloses the privacy practices for Tristan Jarrett and our website (tristanjarrett.com) and mobile applications (Futhark, PercentX & UnitX). This privacy policy applies solely to information collected by this website and our mobile applications.
               </p>
               <h2 className="text-2xl font-bold mb-4">Information Collection and Use</h2>
               <p className="mb-6">
@@ -62,7 +62,7 @@ const Privacy = () => {
               <p className="mb-6">
                 If you have any questions or concerns regarding our Privacy Policy, please contact us at (hello@tristanjarrett.com).
               </p>
-              <p>Last updated on 21 October 2024</p>
+              <p>Last updated on 29 October 2024</p>
             </div>
           </div>
         </div>
