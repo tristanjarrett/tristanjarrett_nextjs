@@ -192,7 +192,7 @@ const Home = () => {
 
               <p className="text-xl lg:text-2xl mb-4">
                 Let's build something awesome together!{" "}
-                <a href="#contact" className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500">
+                <a href="#contact" className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500 hover:opacity-75">
                   I'm open for new projects and opportunities
                 </a>
                 .
