@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import ReactMarkdown from 'react-markdown';
 import Image from 'next/image';
 import Link from 'next/link';
+import PhoneScreenshotSlider from '@/components/PhoneScreenshotSlider';
 
 // Custom renderer for unordered lists
 const CustomListRenderer = ({ children }) => (
@@ -53,7 +54,7 @@ export default function AppDetails({ app }) {
 
         <div className="container px-4 mx-auto flex-grow">
           <div className="py-16 lg:py-24 flex flex-col lg:flex-row justify-center items-start lg:space-x-20">
-            <div className="lg:w-1/2">
+            <div className="lg:w-2/3 xl:w-3/4">
               <div className="flex items-center mb-4">
                 <Image
                   src={`/brands/${app.icon}`}
@@ -143,17 +144,13 @@ export default function AppDetails({ app }) {
                 </div>
               )}
             </div>
-            <div className="lg:w-1/2">
-              <div className="mt-4 grid grid-cols-3 gap-4">
-                {app.screenshots.map((screenshot) => (
-                  <img
-                    key={screenshot}
-                    src={`/apps/${app.id}/${screenshot}`}
-                    alt="App Screenshot"
-                    className="rounded-lg"
-                  />
-                ))}
-              </div>
+            <div className="w-full lg:w-1/3 xl:w-1/4 mt-8 lg:mt-0">
+              {/* Screenshot Section */}
+              <PhoneScreenshotSlider 
+                screenshots={app.screenshots}
+                appId={app.id}
+                appName={app.name} 
+              />
             </div>
           </div>
         </div>
