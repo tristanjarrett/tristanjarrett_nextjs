@@ -7,6 +7,8 @@ import ReactMarkdown from 'react-markdown';
 import Image from 'next/image';
 import Link from 'next/link';
 import PhoneScreenshotSlider from '@/components/PhoneScreenshotSlider';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 // Custom renderer for unordered lists
 const CustomListRenderer = ({ children }) => (
@@ -53,7 +55,15 @@ export default function AppDetails({ app }) {
         </div>
 
         <div className="container px-4 mx-auto flex-grow">
-          <div className="py-16 lg:py-24 flex flex-col lg:flex-row justify-center items-start lg:space-x-20">
+
+          <div className="py-12">
+            <Link href="/" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 transition-colors">
+              <FontAwesomeIcon icon={faChevronLeft} className="mr-2" />
+              <span className="text-lg font-medium">Back to Profile</span>
+            </Link>
+          </div>
+
+          <div className="pb-16 lg:pb-24 flex flex-col lg:flex-row justify-center items-start lg:space-x-20">
             <div className="lg:w-2/3 xl:w-3/4">
               <div className="flex items-center mb-4">
                 <Image

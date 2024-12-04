@@ -71,7 +71,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-indigo-700 dark:bg-blue-950 shadow mx-3 mt-8 rounded-md">
+    <header className="bg-indigo-700 dark:bg-blue-950 shadow mx-3 mt-3 md:mt-8 rounded-md">
       
       <nav className="py-4 px-6 flex justify-between items-center">
 
