@@ -165,7 +165,7 @@ const Home = () => {
             <div className="w-full lg:w-2/3">
               <h1
                 id="dynamic-title"
-                className="text-3xl md:text-4xl font-bold mb-10 lg:pr-20"
+                className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-10 lg:pr-20"
                 style={{ minHeight: "4rem" }}
               >
                 👋 I'm{" "}
