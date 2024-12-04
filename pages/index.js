@@ -251,7 +251,7 @@ const Home = () => {
                   {techStack.map((tech) => (
                     <span
                       key={tech.name}
-                      className="px-2 py-1 rounded-lg bg-gray-200 dark:bg-gray-800"
+                      className="px-2 py-1 rounded-lg bg-gray-200 dark:bg-gray-800 text-lg"
                     >
                       {tech.name}
                     </span>
