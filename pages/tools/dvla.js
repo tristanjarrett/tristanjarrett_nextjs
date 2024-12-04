@@ -72,7 +72,9 @@ const Dvla = () => {
       </Head>
 
       <div className="bg-gray-100 min-h-screen flex flex-col font-sans dark:bg-gray-900">
-        <Header />
+        <div className="container mx-auto ">
+          <Header />
+        </div>
 
         <div className="container px-4 mx-auto flex-grow">
           <div className="py-16 lg:py-24 flex flex-col lg:flex-row justify-center items-center lg:space-x-20 text-center">
