@@ -64,7 +64,7 @@ export default function AppDetails({ app }) {
                 />
                 <h1 className="text-3xl lg:text-4xl font-bold">{app.name}</h1>
               </div>
-              <div className="description">
+              <div className="description text-xl lg:text-2xl">
                 <ReactMarkdown
                   components={{
                     ul: CustomListRenderer,
