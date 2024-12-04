@@ -112,6 +112,8 @@ const ContactForm = () => {
       {isSuccess && (
         <p className="text-green-500 mt-6">Your message was sent successfully! Keep an eye on your inbox.</p>
       )}
+      <hr className="my-8 border-gray-200 dark:border-gray-500" />
+      <span className="font-bold">Or email me at <a href="mailto:hello@tristanjarrett.com" className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500 hover:opacity-75">hello@tristanjarrett.com</a></span>
     </form>
   );
 };
