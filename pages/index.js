@@ -43,17 +43,18 @@ const Home = () => {
     { name: "🚀" },
   ];
 
-  const [isTitleVisible, setIsTitleVisible] = useState(true);
   const titles = ["Software Engineer", "App Developer", "Web Developer"];
-  const fallbackTitle = titles[0]; // Set your fallback title
   const [currentTitle, setCurrentTitle] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopIndex, setLoopIndex] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
+  const [isTitleVisible, setIsTitleVisible] = useState(true);
 
   // Determine "a" or "an" based on the title
   const getArticle = (title) =>
     ["a", "e", "i", "o", "u"].includes(title[0]?.toLowerCase()) ? "an" : "a";
+
+  const fallbackTitle = titles[loopIndex % titles.length]; // Safely calculate fallback title
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,20 +75,17 @@ const Home = () => {
       const fullText = titles[i];
   
       if (!isDeleting && currentTitle === fullText) {
-        // Pause for 2 seconds after typing out the full title
         setTimeout(() => {
           setIsDeleting(true);
-          setTypingSpeed(50); // Speed up for deletion
+          setTypingSpeed(50);
         }, 2000);
         return;
       }
   
       if (isDeleting && currentTitle === "") {
-        // Pause for 1 second before typing the next title
         setIsDeleting(false);
         setLoopIndex(loopIndex + 1);
-        setTypingSpeed(150); // Reset speed for typing
-        setTimeout(() => {}, 1000);
+        setTypingSpeed(150);
         return;
       }
   
