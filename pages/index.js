@@ -43,11 +43,30 @@ const Home = () => {
     { name: "🚀" },
   ];
 
+  const [isTitleVisible, setIsTitleVisible] = useState(true);
   const titles = ["Software Engineer", "App Developer", "Web Developer"];
+  const fallbackTitle = titles[0]; // Set your fallback title
   const [currentTitle, setCurrentTitle] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopIndex, setLoopIndex] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
+
+  // Determine "a" or "an" based on the title
+  const getArticle = (title) =>
+    ["a", "e", "i", "o", "u"].includes(title[0]?.toLowerCase()) ? "an" : "a";
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const titleElement = document.getElementById("dynamic-title");
+      if (titleElement) {
+        const rect = titleElement.getBoundingClientRect();
+        setIsTitleVisible(rect.top >= 0 && rect.bottom <= window.innerHeight);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const handleTyping = () => {
@@ -79,9 +98,11 @@ const Home = () => {
       );
     };
   
-    const timer = setTimeout(handleTyping, typingSpeed);
-    return () => clearTimeout(timer);
-  }, [currentTitle, isDeleting, loopIndex, typingSpeed, titles]);
+    if (isTitleVisible) {
+      const timer = setTimeout(handleTyping, typingSpeed);
+      return () => clearTimeout(timer);
+    }
+  }, [currentTitle, isDeleting, loopIndex, typingSpeed, titles, isTitleVisible]);
 
   return (
     <>
@@ -142,17 +163,21 @@ const Home = () => {
         <div className="container px-4 mx-auto flex-grow">
           <div className="py-16 lg:py-24 flex flex-col lg:flex-row justify-center items-start lg:space-x-20">
             <div className="w-full lg:w-2/3">
-              <h1 className="text-3xl md:text-4xl font-bold mb-10 lg:pr-20">
+              <h1
+                id="dynamic-title"
+                className="text-3xl md:text-4xl font-bold mb-10 lg:pr-20"
+                style={{ minHeight: "4rem" }}
+              >
                 👋 I'm{" "}
                 <span className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500">
                   Tristan
                 </span>
                 ,{" "}
                 <span>
-                  {["a", "e", "i", "o", "u"].includes(currentTitle[0]?.toLowerCase()) ? "an" : "a"}
+                  {getArticle(isTitleVisible ? currentTitle : fallbackTitle)}
                 </span>{" "}
                 <span className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500">
-                  {currentTitle}
+                  {isTitleVisible ? currentTitle : fallbackTitle}
                 </span>
                 .
               </h1>
