@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
@@ -30,6 +31,7 @@ const Home = () => {
     { name: "Unity" },
     { name: "C#" },
     { name: "Computer Vision" },
+    { name: "... and more 💤" },
   ];
 
   const hobbies = [
@@ -38,7 +40,48 @@ const Home = () => {
     { name: "📷" },
     { name: "🐠" },
     { name: "👨🏼‍💻" },
+    { name: "🚀" },
   ];
+
+  const titles = ["Software Engineer", "App Developer", "Web Developer"];
+  const [currentTitle, setCurrentTitle] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [loopIndex, setLoopIndex] = useState(0);
+  const [typingSpeed, setTypingSpeed] = useState(150);
+
+  useEffect(() => {
+    const handleTyping = () => {
+      const i = loopIndex % titles.length;
+      const fullText = titles[i];
+  
+      if (!isDeleting && currentTitle === fullText) {
+        // Pause for 2 seconds after typing out the full title
+        setTimeout(() => {
+          setIsDeleting(true);
+          setTypingSpeed(50); // Speed up for deletion
+        }, 2000);
+        return;
+      }
+  
+      if (isDeleting && currentTitle === "") {
+        // Pause for 1 second before typing the next title
+        setIsDeleting(false);
+        setLoopIndex(loopIndex + 1);
+        setTypingSpeed(150); // Reset speed for typing
+        setTimeout(() => {}, 1000);
+        return;
+      }
+  
+      setCurrentTitle((prev) =>
+        isDeleting
+          ? fullText.substring(0, prev.length - 1)
+          : fullText.substring(0, prev.length + 1)
+      );
+    };
+  
+    const timer = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [currentTitle, isDeleting, loopIndex, typingSpeed, titles]);
 
   return (
     <>
@@ -50,7 +93,7 @@ const Home = () => {
         />
         <meta
           name="keywords"
-          content="software engineer, app developer, website developer, AI, security, performance"
+          content="software engineer, app developer, web developer, AI, security, performance, seo, application, swift, flutter, VR, vision, machine learning"
         />
         <meta name="author" content="Tristan Jarrett" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -88,7 +131,7 @@ const Home = () => {
           name="twitter:image"
           content="https://tristanjarrett.com/screenshot.png"
         />
-        <link rel="icon" href="/icon.svg" alt="TJ" />
+        <link rel="icon" href="/favicon.ico" alt="TJ" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#002554"></meta>
       </Head>
@@ -99,20 +142,35 @@ const Home = () => {
         <div className="container px-4 mx-auto flex-grow">
           <div className="py-16 lg:py-24 flex flex-col lg:flex-row justify-center items-start lg:space-x-20">
             <div className="w-full lg:w-2/3">
-              <h1 className="text-4xl md:text-5xl font-bold mb-10 lg:pr-20">
-                Hey! I'm{" "}
+              <h1 className="text-3xl md:text-4xl font-bold mb-10 lg:pr-20">
+                👋 I'm{" "}
                 <span className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500">
                   Tristan
                 </span>
-                , a Software Engineer with over ten years of experience.
+                ,{" "}
+                <span>
+                  {["a", "e", "i", "o", "u"].includes(currentTitle[0]?.toLowerCase()) ? "an" : "a"}
+                </span>{" "}
+                <span className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500">
+                  {currentTitle}
+                </span>
+                .
               </h1>
 
-              <p className="text-xl mb-4">
-                I am a seasoned professional with experience in website development, mobile app development, SaaS solutions, Web3 applications, and VR development. I'm dedicated to delivering high-quality work that helps my clients achieve their goals with innovative and reliable solutions.
+              <p className="text-xl lg:text-2xl mb-4">
+                Hi there! I'm Tristan, a tech enthusiast who loves turning ideas into apps, websites, and all things digital. I've always been obsessed with Apple devices, and building for their ecosystem has been a lifelong dream of mine. Whether it's creating sleek web platforms, crafting mobile apps, or experimenting with AI and machine learning, I'm all about creating cool stuff that makes life easier (and a little more fun!).
               </p>
 
-              <p className="text-xl mb-4">
-                In my free time, I love exploring new cafes, hiking, photography, and building apps. I also enjoy fishkeeping and have a small collection of freshwater fish.
+              <p className="text-xl lg:text-2xl mb-4">
+                When I'm not coding, you'll probably find me exploring local cafes for the perfect coffee, hiking trails, or snapping photos of whatever catches my eye.
+              </p>
+
+              <p className="text-xl lg:text-2xl mb-4">
+                Let's build something awesome together!{" "}
+                <a href="#contact" className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500">
+                  I'm open for new projects and opportunities
+                </a>
+                .
               </p>
 
               <ul className="flex space-x-4 mt-8">
@@ -177,7 +235,7 @@ const Home = () => {
               </div>
 
               <div className="mt-12">
-                <h2 className="text-2xl font-bold mb-6">Hobbies</h2>
+                <h2 className="text-2xl font-bold mb-6">Hobbies & Interests</h2>
                 <div className="flex flex-wrap gap-2">
                   {hobbies.map((tech) => (
                     <span

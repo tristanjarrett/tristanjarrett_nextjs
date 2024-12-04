@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import Icon from '@/public/icon.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
@@ -97,18 +95,18 @@ const Header = () => {
         </div>
 
         <div className="flex sm:hidden">
-          <button className="text-white text-3xl focus:outline-none" onClick={handleMobileMenuClick}>
+          <button className="text-gray-100 text-3xl focus:outline-none" onClick={handleMobileMenuClick}>
             <FontAwesomeIcon icon={showMobileMenu ? faXmark : faBars} />
           </button>
         </div>
 
         <div className="hidden sm:flex">
-          <a href="/" className="text-xl font-medium text-gray-200 hover:underline mr-4">
+          <a href="/" className="text-xl font-medium text-gray-100 hover:underline mr-4">
             Profile
           </a>
           <div className="relative group mr-4">
             <button
-              className="text-xl font-medium text-gray-200 hover:underline focus:outline-none"
+              className="text-xl font-medium text-gray-100 hover:underline focus:outline-none"
               onClick={handleAppsMenuClick}
             >
               Apps
@@ -127,7 +125,7 @@ const Header = () => {
           </div>
           <div className="relative group mr-4">
             <button
-              className="text-xl font-medium text-gray-200 hover:underline focus:outline-none"
+              className="text-xl font-medium text-gray-100 hover:underline focus:outline-none"
               onClick={handleToolsMenuClick}
             >
               Tools
@@ -142,24 +140,24 @@ const Header = () => {
               </ul>
             )}
           </div>
-          <a href="https://medium.com/@tristanjarrett" className="text-xl font-medium text-gray-200 hover:underline mr-4">
+          <a href="https://medium.com/@tristanjarrett" className="text-xl font-medium text-gray-100 hover:underline mr-4">
             Blog
           </a>
-          <a href="/#contact" className="text-xl font-medium text-gray-200 hover:underline">
+          <a href="/#contact" className="text-xl font-medium text-gray-100 hover:underline">
             Contact
           </a>
         </div>
       </nav>
 
       <div className={`sm:hidden pb-2 ${showMobileMenu ? 'block' : 'hidden'}`}>
-        <a href="/" className="block py-2 text-xl font-medium text-white hover:underline px-4">
+        <a href="/" className="block py-2 text-xl font-medium text-gray-100 hover:underline px-4">
           Profile
         </a>
         <div className="py-2 px-4">
-          <h3 className="text-lg font-medium text-white">Apps</h3>
+          <h3 className="text-lg font-medium text-gray-100">Apps</h3>
           <ul className="mt-2">
             {appData.map(app => (
-              <li key={app.id} className="py-1 text-white">
+              <li key={app.id} className="py-1 text-gray-100">
                 <span className='mr-2'>-</span>
                 <Link href={`/apps/${app.id}`} className="hover:underline">
                   {app.name}
@@ -169,9 +167,9 @@ const Header = () => {
           </ul>
         </div>
         <div className="py-2 px-4">
-          <h3 className="text-lg font-medium text-white">Tools</h3>
+          <h3 className="text-lg font-medium text-gray-100">Tools</h3>
           <ul className="mt-2">
-            <li className="py-1 text-white">
+            <li className="py-1 text-gray-100">
               <span className='mr-2'>-</span>
               <Link href="/tools/dvla" className="hover:underline">
                 DVLA Tax & MOT Checker (UK)
@@ -179,10 +177,10 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <a href="https://medium.com/@tristanjarrett" className="block py-2 text-xl font-medium text-white hover:underline px-4">
+        <a href="https://medium.com/@tristanjarrett" className="block py-2 text-xl font-medium text-gray-100 hover:underline px-4">
           Blog
         </a>
-        <a href="/#contact" className="block py-2 text-xl font-medium text-white hover:underline px-4">
+        <a href="/#contact" className="block py-2 text-xl font-medium text-gray-100 hover:underline px-4">
           Contact
         </a>
       </div>
