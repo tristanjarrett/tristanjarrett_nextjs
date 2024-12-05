@@ -161,26 +161,45 @@ const Home = () => {
         </div>
 
         <div className="container px-4 mx-auto flex-grow">
-          <div className="py-16 lg:py-24 flex flex-col lg:flex-row justify-center items-start lg:space-x-20">
+          <div className="py-10 lg:py-24 flex flex-col lg:flex-row justify-center items-start lg:space-x-20">
             <div className="w-full lg:w-2/3">
-              <h1
-                id="dynamic-title"
-                className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-10 lg:pr-20"
-                style={{ minHeight: "4rem" }}
-              >
-                👋 I'm{" "}
-                <span className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500">
-                  Tristan
-                </span>
-                ,{" "}
-                <span>
-                  {getArticle(isTitleVisible ? currentTitle : fallbackTitle)}
-                </span>{" "}
-                <span className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500">
-                  {isTitleVisible ? currentTitle : fallbackTitle}
-                </span>
-                .
-              </h1>
+
+              <div className="flex flex-col-reverse sm:flex-row mb-10 items-center">
+                <div className="max-sm:w-full w-3/4 lg:w-full">
+                  <h1
+                    id="dynamic-title"
+                    className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold lg:pr-20"
+                    style={{ minHeight: "4rem" }}
+                  >
+                    👋 I'm{" "}
+                    <span className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500">
+                      Tristan Jarrett
+                    </span>
+                    ,{" "}
+                    <br />
+                    <span>
+                      {getArticle(isTitleVisible ? currentTitle : fallbackTitle)}
+                    </span>{" "}
+                    <span className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500">
+                      {isTitleVisible ? currentTitle : fallbackTitle}
+                    </span>
+                    .
+                  </h1>
+                </div>
+                
+                <div className="max-sm:w-full  w-1/4 flex max-sm:mb-10 sm:justify-end lg:hidden">
+                  <div className="relative max-sm:left-2">
+                    <div className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 w-[150px] h-[150px] rounded-3xl shadow-lg absolute right-2 top-2 z-0 dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500"></div>
+                    <Image
+                      src="/tristan.jpg"
+                      alt="Tristan"
+                      width={150}
+                      height={150}
+                      className="rounded-3xl shadow-lg relative z-10"
+                    />
+                  </div>
+                </div>
+              </div>
 
               <p className="text-xl lg:text-2xl mb-4">
                 Hi there! I'm Tristan, a tech enthusiast who loves turning ideas into apps, websites, and all things digital. I've always been obsessed with Apple devices, and building for their ecosystem has been a lifelong dream of mine. Whether it's creating sleek web platforms, crafting mobile apps, or experimenting with AI and machine learning, I'm all about creating cool stuff that makes life easier (and a little more fun!).
@@ -198,7 +217,7 @@ const Home = () => {
                 .
               </p>
 
-              <ul className="flex space-x-4 mt-8">
+              <ul className="flex space-x-4 mt-8 lg:hidden">
                 <li>
                   <a
                     href="https://www.linkedin.com/in/tristanjarrett"
@@ -246,34 +265,6 @@ const Home = () => {
               </ul>
 
               <div className="mt-12">
-                <h2 className="text-2xl font-bold mb-6">Tech Stack</h2>
-                <div className="flex flex-wrap gap-2">
-                  {techStack.map((tech) => (
-                    <span
-                      key={tech.name}
-                      className="px-2 py-1 rounded-lg bg-gray-200 dark:bg-gray-800 text-lg"
-                    >
-                      {tech.name}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-12">
-                <h2 className="text-2xl font-bold mb-6">Hobbies & Interests</h2>
-                <div className="flex flex-wrap gap-2">
-                  {hobbies.map((tech) => (
-                    <span
-                      key={tech.name}
-                      className="px-2 py-2 rounded-lg bg-gray-200 dark:bg-gray-800 text-4xl"
-                    >
-                      {tech.name}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-12">
                 <h2 className="text-2xl font-bold mb-6">
                   I've published some apps
                 </h2>
@@ -309,6 +300,20 @@ const Home = () => {
               </div>
 
               <div className="mt-12">
+                <h2 className="text-2xl font-bold mb-6">Tech Stack</h2>
+                <div className="flex flex-wrap gap-2">
+                  {techStack.map((tech) => (
+                    <span
+                      key={tech.name}
+                      className="px-2 py-1 rounded-lg bg-gray-200 dark:bg-gray-800 text-lg"
+                    >
+                      {tech.name}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-12">
                 <h2 className="text-2xl font-bold mb-6">Where to find me</h2>
                 <ul className="flex space-x-4 mb-8">
                   {[
@@ -327,8 +332,8 @@ const Home = () => {
                           <Image
                             src={`/brands/${src}`}
                             alt={alt}
-                            width={100}
-                            height={100}
+                            width={120}
+                            height={120}
                             className="rounded-xl shadow-lg"
                           />
                           <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl flex items-center justify-center">
@@ -345,20 +350,101 @@ const Home = () => {
                 </ul>
               </div>
 
+              <div className="mt-12 lg:hidden">
+                <h2 className="text-2xl font-bold mb-6">Hobbies & Interests</h2>
+                <div className="flex flex-wrap gap-2">
+                  {hobbies.map((tech) => (
+                    <span
+                      key={tech.name}
+                      className="px-2 py-2 rounded-lg bg-gray-200 dark:bg-gray-800 text-3xl"
+                    >
+                      {tech.name}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
               <div id="contact" className="mt-4 pt-8">
                 <h2 className="text-2xl font-bold mb-6">Get in touch!</h2>
                 <ContactForm />
               </div>
             </div>
-            <div className="w-full lg:w-1/3 mb-10 lg:mb-0 relative sticky top-10 hidden lg:block">
-              <div className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 w-full h-full rounded-3xl shadow-lg absolute -left-4 -bottom-4 z-0 dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500"></div>
-              <Image
-                src="/tristan.jpg"
-                alt="Tristan"
-                width={500}
-                height={500}
-                className="rounded-3xl shadow-lg relative z-10"
-              />
+
+            <div className="w-full lg:w-1/3 mb-10 lg:mb-0 sticky top-10 hidden lg:block">
+              <div className="relative mb-12">
+                <div className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 w-full h-full rounded-3xl shadow-lg absolute right-4 top-4 z-0 dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500"></div>
+                <Image
+                  src="/tristan.jpg"
+                  alt="Tristan"
+                  width={500}
+                  height={500}
+                  className="rounded-3xl shadow-lg relative z-10"
+                />
+              </div>
+
+              <div className="mb-8">
+                <h2 className="text-2xl font-bold mb-6">Connect</h2>
+                <ul className="flex space-x-4">
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/in/tristanjarrett"
+                      className="hover:text-blue-600"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span className="sr-only">LinkedIn</span>
+                      <FontAwesomeIcon icon={faLinkedin} size="2x" />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://x.com/tristangjarrett"
+                      className="hover:text-blue-400"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span className="sr-only">X</span>
+                      <FontAwesomeIcon icon={faXTwitter} size="2x" />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://instagram.com/tristangjarrett"
+                      className="hover:text-pink-500"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span className="sr-only">Instagram</span>
+                      <FontAwesomeIcon icon={faInstagram} size="2x" />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/tristanjarrett"
+                      className="hover:text-gray-500"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span className="sr-only">GitHub</span>
+                      <FontAwesomeIcon icon={faGithub} size="2x" />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mb-8">
+                <h2 className="text-2xl font-bold mb-6">Hobbies & Interests</h2>
+                <div className="flex flex-wrap gap-2">
+                  {hobbies.map((tech) => (
+                    <span
+                      key={tech.name}
+                      className="px-2 py-2 rounded-lg bg-gray-200 dark:bg-gray-800 text-3xl"
+                    >
+                      {tech.name}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
