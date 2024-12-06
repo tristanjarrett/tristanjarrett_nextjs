@@ -35,13 +35,13 @@ const Home = () => {
   ];
 
   const hobbies = [
+    { name: "👨🏼‍💻" },
     { name: "☕️" },
+    { name: "🐠" },
     { name: "🥾" },
     { name: "📷" },
-    { name: "🐠" },
-    { name: "👨🏼‍💻" },
     { name: "🚀" },
-    { name: "🎮" },
+    { name: "👾" },
   ];
 
   const titles = ["Software Engineer", "App Developer", "Web Developer"];
