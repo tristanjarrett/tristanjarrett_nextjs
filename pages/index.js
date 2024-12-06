@@ -188,19 +188,19 @@ const Home = () => {
                   </h1>
                 </div>
                 
-                <div className="max-sm:w-full w-1/4 flex max-sm:mb-10 gap-2 justify-between sm:justify-end lg:hidden">
-                  <div className="relative max-sm:left-2">
-                    <div className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 w-[150px] h-[150px] rounded-3xl shadow-lg absolute right-2 top-2 z-0 dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500"></div>
+                <div className="max-sm:w-full w-1/4 flex max-sm:mb-10 gap-2 items-center justify-between sm:justify-end lg:hidden">
+                  <div className="relative max-sm:left-1">
+                    <div className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 w-[120px] h-[120px] rounded-3xl shadow-lg absolute right-1 top-1 z-0 dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500"></div>
                     <Image
                       src="/tristan.jpg"
                       alt="Tristan"
-                      width={150}
-                      height={150}
+                      width={120}
+                      height={120}
                       className="rounded-3xl shadow-lg relative z-10"
                     />
                   </div>
 
-                  <ul className="flex ml-2 gap-3 sm:hidden text-3xl">
+                  <ul className="flex ml-1 gap-3 sm:hidden text-3xl">
                     <li>
                       <a
                         href="https://www.linkedin.com/in/tristanjarrett"
