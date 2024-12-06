@@ -17,21 +17,21 @@ import { faExternalLinkAlt, faCoffee } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   const techStack = [
-    { name: "React" },
     { name: "Swift" },
     { name: "JavaScript" },
-    { name: "Node.js" },
-    { name: "Flutter" },
-    { name: "Machine Learning" },
     { name: "Python" },
     { name: "Dart" },
+    { name: "C#" },
+    { name: "React" },
+    { name: "Node.js" },
     { name: "Next.js" },
+    { name: "Flutter" },
     { name: "SwiftUI" },
     { name: "Firebase" },
-    { name: "Unity" },
-    { name: "C#" },
+    { name: "Machine Learning" },
     { name: "Computer Vision" },
-    { name: "... and more 💤" },
+    { name: "Unity" },
+    { name: "+ more 💤" },
   ];
 
   const hobbies = [
