@@ -188,7 +188,7 @@ const Home = () => {
                   </h1>
                 </div>
                 
-                <div className="max-sm:w-full  w-1/4 flex max-sm:mb-10 sm:justify-end lg:hidden">
+                <div className="max-sm:w-full w-1/4 flex max-sm:mb-10 gap-2 justify-between sm:justify-end lg:hidden">
                   <div className="relative max-sm:left-2">
                     <div className="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500 w-[150px] h-[150px] rounded-3xl shadow-lg absolute right-2 top-2 z-0 dark:from-yellow-500 dark:via-orange-500 dark:to-pink-500"></div>
                     <Image
@@ -199,6 +199,54 @@ const Home = () => {
                       className="rounded-3xl shadow-lg relative z-10"
                     />
                   </div>
+
+                  <ul className="flex ml-2 gap-3 sm:hidden text-3xl">
+                    <li>
+                      <a
+                        href="https://www.linkedin.com/in/tristanjarrett"
+                        className="hover:text-blue-600"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <span className="sr-only">LinkedIn</span>
+                        <FontAwesomeIcon icon={faLinkedin} size="1x" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://x.com/tristangjarrett"
+                        className="hover:text-blue-400"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <span className="sr-only">X</span>
+                        <FontAwesomeIcon icon={faXTwitter} size="1x" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://instagram.com/tristangjarrett"
+                        className="hover:text-pink-500"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <span className="sr-only">Instagram</span>
+                        <FontAwesomeIcon icon={faInstagram} size="1x" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://github.com/tristanjarrett"
+                        className="hover:text-gray-500"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <span className="sr-only">GitHub</span>
+                        <FontAwesomeIcon icon={faGithub} size="1x" />
+                      </a>
+                    </li>
+                  </ul>
+
                 </div>
               </div>
 
@@ -218,7 +266,7 @@ const Home = () => {
                 .
               </p>
 
-              <ul className="flex space-x-4 mt-8 lg:hidden">
+              <ul className="max-sm:hidden flex space-x-4 mt-8 lg:hidden">
                 <li>
                   <a
                     href="https://www.linkedin.com/in/tristanjarrett"
@@ -314,8 +362,27 @@ const Home = () => {
                 </div>
               </div>
 
+              <div className="mt-12 lg:hidden">
+                <h2 className="text-2xl font-bold mb-6">Hobbies & Interests</h2>
+                <div className="flex flex-wrap gap-2">
+                  {hobbies.map((tech) => (
+                    <span
+                      key={tech.name}
+                      className="px-2 py-2 rounded-lg bg-gray-200 dark:bg-gray-800 text-2xl"
+                    >
+                      {tech.name}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div id="contact" className="mt-4 pt-8">
+                <h2 className="text-2xl font-bold mb-6">Get in touch!</h2>
+                <ContactForm />
+              </div>
+
               <div className="mt-12">
-                <h2 className="text-2xl font-bold mb-6">Where to find me</h2>
+                <h2 className="text-2xl font-bold mb-6">More ways to work with me</h2>
                 <ul className="flex space-x-4 mb-8">
                   {[
                     { href: 'https://dysrupt.co.uk', src: 'dysrupt.png', alt: 'Dysrupt' },
@@ -349,25 +416,6 @@ const Home = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
-
-              <div className="mt-12 lg:hidden">
-                <h2 className="text-2xl font-bold mb-6">Hobbies & Interests</h2>
-                <div className="flex flex-wrap gap-2">
-                  {hobbies.map((tech) => (
-                    <span
-                      key={tech.name}
-                      className="px-2 py-2 rounded-lg bg-gray-200 dark:bg-gray-800 text-3xl"
-                    >
-                      {tech.name}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div id="contact" className="mt-4 pt-8">
-                <h2 className="text-2xl font-bold mb-6">Get in touch!</h2>
-                <ContactForm />
               </div>
             </div>
 
@@ -435,7 +483,7 @@ const Home = () => {
 
               <div className="mb-8">
                 <h2 className="text-2xl font-bold mb-6">Hobbies & Interests</h2>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1">
                   {hobbies.map((tech) => (
                     <span
                       key={tech.name}
