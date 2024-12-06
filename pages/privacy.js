@@ -1,6 +1,9 @@
 import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 const Privacy = () => {
   return (
@@ -29,8 +32,16 @@ const Privacy = () => {
         </div>
 
         <div className="container px-4 mx-auto flex-grow">
-          <div className="py-16 lg:py-24 flex flex-col lg:flex-row justify-center items-start lg:space-x-20">
+          <div className="pb-16 lg:pb-24 flex flex-col lg:flex-row justify-center items-start lg:space-x-20">
             <div className="lg:w-3/5">
+
+              <Link href="/" className="inline-block py-12 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 transition-colors">
+                <div className="flex items-center">
+                  <FontAwesomeIcon icon={faChevronLeft} className="mr-2" />
+                  <span className="text-lg font-medium">Back to Profile</span>
+                </div>
+              </Link>
+
               <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
               <p className="mb-6">
                 This privacy policy discloses the privacy practices for Tristan Jarrett and our website (tristanjarrett.com) and mobile applications (Futhark, PercentX & UnitX). This privacy policy applies solely to information collected by this website and our mobile applications.

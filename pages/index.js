@@ -329,7 +329,7 @@ const Home = () => {
                                 alt="App Icon"
                                 width={80}
                                 height={80}
-                                className="rounded-md shadow"
+                                className="rounded-2xl shadow"
                               />
                             </div>
                           </div>

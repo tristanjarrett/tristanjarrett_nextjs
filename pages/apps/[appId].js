@@ -56,12 +56,12 @@ export default function AppDetails({ app }) {
 
         <div className="container px-4 mx-auto flex-grow">
 
-          <div className="py-12">
-            <Link href="/" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 transition-colors">
+          <Link href="/" className="inline-block py-12 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 transition-colors">
+            <div className="flex items-center">
               <FontAwesomeIcon icon={faChevronLeft} className="mr-2" />
               <span className="text-lg font-medium">Back to Profile</span>
-            </Link>
-          </div>
+            </div>
+          </Link>
 
           <div className="pb-16 lg:pb-24 flex flex-col lg:flex-row justify-center items-start lg:space-x-20">
             <div className="lg:w-2/3 xl:w-3/4">
@@ -69,9 +69,9 @@ export default function AppDetails({ app }) {
                 <Image
                   src={`/brands/${app.icon}`}
                   alt="App Icon"
-                  width={50}
-                  height={50}
-                  className="rounded-lg shadow-lg mr-4"
+                  width={75}
+                  height={75}
+                  className="rounded-2xl shadow-lg mr-4"
                 />
                 <h1 className="text-3xl lg:text-4xl font-bold">{app.name}</h1>
               </div>
@@ -180,7 +180,7 @@ export default function AppDetails({ app }) {
                           alt="App Icon"
                           width={80}
                           height={80}
-                          className="rounded-md shadow"
+                          className="rounded-2xl shadow"
                         />
                       </div>
                     </div>

@@ -3,8 +3,9 @@ import Head from "next/head";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { format } from "date-fns";
+import Link from 'next/link';
 
 const Dvla = () => {
   const [vehicleData, setVehicleData] = useState(null);
@@ -77,11 +78,22 @@ const Dvla = () => {
         </div>
 
         <div className="container px-4 mx-auto flex-grow">
-          <div className="py-16 lg:py-24 flex flex-col lg:flex-row justify-center items-center lg:space-x-20 text-center">
+          <div className="pb-16 lg:pb-24 flex flex-col lg:flex-row justify-center items-center lg:space-x-20 text-center">
             <div className="w-full lg:w-3/4 xl:w-3/5">
+
+              <Link href="/" className="inline-block py-12 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 transition-colors">
+                <div className="flex items-center">
+                  <FontAwesomeIcon icon={faChevronLeft} className="mr-2" />
+                  <span className="text-lg font-medium">Back to Profile</span>
+                </div>
+              </Link>
+
               <h1 className="text-4xl lg:text-5xl font-bold mb-8">
-                DVLA Vehicle Enquiry
+                DVLA Vehicle Lookup
               </h1>
+
+              <p className="mb-8 text-xl">Check the Tax and MOT status of your vehicle (UK only)</p>
+
               <div className="w-full mx-auto p-6 md:p-8 bg-white rounded-xl shadow-md dark:bg-gray-800">
                 <form onSubmit={handleFormSubmit}>
                   <input
@@ -116,6 +128,7 @@ const Dvla = () => {
                   </button>
                 </form>
               </div>
+
               {vehicleData && (
                 <>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4 md:my-6">
@@ -259,6 +272,7 @@ const Dvla = () => {
                   </div>
                 </>
               )}
+
             </div>
           </div>
         </div>
