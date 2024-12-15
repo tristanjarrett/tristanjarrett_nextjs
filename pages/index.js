@@ -317,7 +317,7 @@ const Home = () => {
                 <h2 className="text-2xl font-bold mb-6">
                   I've published some apps
                 </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {appData.map((app) => (
                     <Link key={app.id} href={`/apps/${app.id}`}>
                       <div className="group block bg-white dark:bg-gray-800 shadow rounded-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg flex flex-col h-full">

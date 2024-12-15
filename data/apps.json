@@ -1,5 +1,30 @@
 [
     {
+        "id": "fridg",
+        "name": "Fridg",
+        "icon": "fridg.png",
+        "promo": "Effortlessly manage groceries, recipes, pantry, and meal plans with Fridg - your all-in-one kitchen helper!",
+        "subtitle": "Plan, Shop, Cook.",
+        "keywords": "shopping list, recipe, meal plan, pantry, cooking, groceries, cookbook, inventory, kitchen essential",
+        "description": "Fridg brings all your kitchen essentials together, making it easy to manage grocery lists, store recipes, organise your pantry, and plan meals. Whether you're a meal prep pro or just want a more organised kitchen, Fridg helps streamline everything in one place. Say goodbye to forgotten ingredients and last-minute scrambles - Fridg keeps you prepared, so you can focus on enjoying your meals.",
+        "releases": [
+            {
+                "version": "0.10.1",
+                "changelog": [
+                    "Initial release"
+                ]
+            }
+        ],
+        "screenshots": [
+            "screenshot1.png",
+            "screenshot2.png",
+            "screenshot3.png",
+            "screenshot4.png",
+            "screenshot5.png"
+        ],
+        "appstore_link": "https://apps.apple.com/app/id6736772028"
+    },
+    {
         "id": "futhark",
         "name": "Futhark",
         "icon": "futhark.png",
