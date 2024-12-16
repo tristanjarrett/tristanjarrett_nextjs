@@ -381,7 +381,7 @@ const Home = () => {
                 <ContactForm />
               </div>
 
-              <div className="mt-12">
+              {/* <div className="mt-12">
                 <h2 className="text-2xl font-bold mb-6">More ways to work with me</h2>
                 <ul className="flex space-x-4 mb-8">
                   {[
@@ -416,7 +416,7 @@ const Home = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </div> */}
             </div>
 
             <div className="w-full lg:w-1/3 mb-10 lg:mb-0 sticky top-10 hidden lg:block">
