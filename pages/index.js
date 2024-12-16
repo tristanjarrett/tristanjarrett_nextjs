@@ -13,7 +13,7 @@ import {
   faInstagram,
   faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import { faExternalLinkAlt, faCoffee } from "@fortawesome/free-solid-svg-icons";
+// import { faExternalLinkAlt, faCoffee } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   const techStack = [
