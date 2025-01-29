@@ -12,6 +12,7 @@ import {
   faGithub,
   faInstagram,
   faXTwitter,
+  faYoutubeSquare,
 } from "@fortawesome/free-brands-svg-icons";
 // import { faExternalLinkAlt, faCoffee } from "@fortawesome/free-solid-svg-icons";
 
@@ -252,6 +253,17 @@ const Home = () => {
                         <FontAwesomeIcon icon={faGithub} size="1x" />
                       </a>
                     </li>
+                    <li>
+                      <a
+                        href="https://www.youtube.com/@tristangjarrett"
+                        className="hover:text-red-600"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <span className="sr-only">YouTube</span>
+                        <FontAwesomeIcon icon={faYoutubeSquare} size="1x" />
+                      </a>
+                    </li>
                   </ul>
 
                 </div>
@@ -328,6 +340,17 @@ const Home = () => {
                   >
                     <span className="sr-only">GitHub</span>
                     <FontAwesomeIcon icon={faGithub} size="2x" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.youtube.com/@tristangjarrett"
+                    className="hover:text-red-600"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="sr-only">YouTube</span>
+                    <FontAwesomeIcon icon={faYoutubeSquare} size="2x" />
                   </a>
                 </li>
               </ul>
@@ -495,6 +518,17 @@ const Home = () => {
                     >
                       <span className="sr-only">GitHub</span>
                       <FontAwesomeIcon icon={faGithub} size="2x" />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.youtube.com/@tristangjarrett"
+                      className="hover:text-red-600"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span className="sr-only">YouTube</span>
+                      <FontAwesomeIcon icon={faYoutubeSquare} size="2x" />
                     </a>
                   </li>
                 </ul>
